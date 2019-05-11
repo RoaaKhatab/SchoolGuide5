@@ -1,0 +1,305 @@
+﻿@{
+    ViewBag.Title = "FAQ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <!--<title>Bootstrap FAQ Template | PrepBootstrap</title>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <!--START SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- END SCROLL TOP BUTTON -->
+    <!-- Start search box -->
+    <div id="mu-search">
+        <div class="mu-search-area">
+            <button class="mu-search-close"><span class="fa fa-close"></span></button>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="mu-search-form">
+                            <input type="search" placeholder="Type Your Keyword(s) & Hit Enter">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End search box -->
+    <!-- Page breadcrumb -->
+
+    <div class="container">
+        <!--<div class="page-header">
+            <h1>Bootstrap FAQ <small>Bootsrap Frequently Asked Questions</small></h1>
+        </div>-->
+        <!-- Bootstrap FAQ - START -->
+
+
+
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>
+                .collapsible {
+                    background-color: #777;
+                    color: white;
+                    cursor: pointer;
+                    padding: 18px;
+                    width: auto;
+                    border: none;
+                    text-align: left;
+                    outline: none;
+                    font-size: 15px;
+                }
+
+                    .active, .collapsible:hover {
+                        background-color: #555;
+                    }
+
+                .content {
+                    padding: 0 18px;
+                    display: none;
+                    overflow: hidden;
+                    background-color: none;
+                }
+            </style>
+        </head>
+
+
+
+
+
+        <section id="mu-features">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="mu-features-area">
+                            <!-- Start Title -->
+                            <div class="mu-title">
+                                <figure>
+                                    <img src="~/content/img/mine/FaqBackground" alt="img">
+                                </figure>
+                                <h1>School guid help center!</h1>
+                            </div>
+                            <!-- End Title -->
+                            <!-- Start features content -->
+                            <div class="mu-features-content">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4  col-sm-6">
+                                        <div class="mu-single-feature">
+                                            <span class="fa fa-leanpub"></span>
+                                            <h4>About schools' details</h4>
+                                            <a href="#" onclick="alert('helllooo')" style="border:none"<p>How to search for specific school?</p></a>
+                                            <a href="#" onclick="alert('helllooo')" style="border:none" <p>How to search for the nearest school from your location?</p></a>
+                                            <a href="#" onclick="alert('helllooo')" style="border:none"<p>How to filter schools?</p></a>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <div class="mu-single-feature">
+                                            <span class="fa fa-file-text"></span>
+                                            <h4>About the team</h4>
+                                            <a href="#" onclick="alert('helllooo')" style="border:none"<p>How to send a feedback?</p></a>
+                                            <a href="#" onclick="alert('helllooo')" style="border:none"<p>Know more about us!</p></a>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <div class="mu-single-feature">
+                                            <span class="fa fa-bookmark-o"></span>
+                                            <h4>Wishlist</h4>
+                                            <a href="#" onclick="alert('helllooo')" style="border:none"<p>What is the wish list?</p></a>
+                                            <a href="#" onclick="alert('helllooo')" style="border:none"<p>How to add a school to your wish list?</p></a>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- End features content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        @*<body>
+
+                <br /> <br /><br /><br />
+                <button class="collapsible" style="margin-top:50px"><i class="fa fa-leanpub" style="font-size:20px"></i></button>
+                <div class="content">
+                    <p>
+                        <br />
+                       <h2>Q</h2>
+                        <h1> How to search for specific school?</h1>
+                        <br />
+                        -OIBNVONOBINEOIBNIBNPNIBNOINI<br />
+                        -KNIBOIBOBUOBOBJKBUJVIUVOL<br />
+                        -VNOBUJBKUBKJBUIVIYVKJV<br />
+                    </p>
+                </div>
+                <br /><br />
+
+                <button class="collapsible"><i class="fa fa-file-text" style="font-size:20px"></i></button>
+                <div class="content">
+                    <p>
+                        <br />
+                        <h2>Q</h2>
+                        <h1> How to write a feedback?</h1>
+                        <br />
+                        1-Go to the home page.<br />
+                        2-Open "Contact Us" page.<br />
+                        3-Fill the form and click submit.<br />
+                    </p>
+                </div>
+                <br /><br />
+
+                <button class="collapsible"><i class="fa fa-bookmark-o" style="font-size:20px"></i></button>
+                <div class="content">
+                    <p>
+                        <br />
+                        <h2>Q</h2>
+                        <h1> How to add a school to your wish list?</h1>
+                        <br />
+                        1-Search for the school you want.<br />
+                        2-Open the school's page.<br />
+                        3-Click on "Add school to my wish list" button.<br />
+                    </p>
+                </div>
+                <br /><br />
+
+                <button class="collapsible"><i class=" 	fa fa-search" style="font-size:20px"></i></button>
+                <div class="content">
+                    <p>
+                        <br />
+                        <h2>Q</h2>
+                        <h1> How to find the nearest school from your location?</h1>
+                        <br />
+                        1-Open the home page.<br />
+                        2-Click on search by location.<br />
+                        3-Pin your current locatio.<br />
+
+                    </p>
+                </div>
+                <br /><br /><br />
+
+
+                <script>
+                    var coll = document.getElementsByClassName("collapsible");
+                    var i;
+
+                    for (i = 0; i < coll.length; i++) {
+                        coll[i].addEventListener("click", function () {
+                            this.classList.toggle("active");
+                            var content = this.nextElementSibling;
+                            if (content.style.display === "block") {
+                                content.style.display = "none";
+                            } else {
+                                content.style.display = "block";
+                            }
+                        });
+                    }
+                </script>
+
+            </body>*@
+</html>
+
+
+
+
+
+<!-- End breadcrumb -->
+<!-- Start contact  -->
+<section id="mu-contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+            <!-- end contact content -->
+        </div>
+    </div>
+
+</section>
+<!-- End contact  -->
+<!-- Start footer -->
+<footer id="mu-footer">
+
+    <!-- start footer bottom -->
+    <div class="mu-footer-bottom">
+        <div class="container">
+            <div class="mu-footer-bottom-area">
+                <p>&copy; All Right Reserved.</p>
+            </div>
+        </div>
+    </div>
+    <!-- end footer bottom -->
+</footer>
+<!-- End footer -->
+<!-- jQuery library -->
+<script src="~/content/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="~/content/js/bootstrap.js"></script>
+<!-- Slick slider -->
+<script type="text/javascript" src="~/content/js/slick.js"></script>
+<!-- Counter -->
+<script type="text/javascript" src="~/content/js/waypoints.js"></script>
+<script type="text/javascript" src="~/content/js/jquery.counterup.js"></script>
+<!-- Mixit slider -->
+<script type="text/javascript" src="~/content/js/jquery.mixitup.js"></script>
+<!-- Add fancyBox -->
+<script type="text/javascript" src="~/content/js/jquery.fancybox.pack.js"></script>
+
+<!-- Custom js -->
+<script src="~/content/js/custom.js"></script>
+
+<style>
+
+    .faqHeader {
+        font-size: 27px;
+        margin: 20px;
+    }
+
+    .panel-heading [data-toggle="collapse"]:after {
+        font-family: 'Glyphicons Halflings';
+        content: "\e072"; /* "play" icon */
+        float: right;
+        color: #F58723;
+        font-size: 18px;
+        line-height: 22px;
+        /* rotate "play" icon from > (right arrow) to down arrow */
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+
+    .panel-heading [data-toggle="collapse"].collapsed:after {
+        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        color: #454444;
+    }
+</style>
+
+
+</body>
+</html>

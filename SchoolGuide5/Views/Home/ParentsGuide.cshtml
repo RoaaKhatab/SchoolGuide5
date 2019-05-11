@@ -1,0 +1,250 @@
+﻿
+@{
+    ViewBag.Title = "ParentsGuide";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ParentsGuide</h2>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <!--<title>Bootstrap FAQ Template | PrepBootstrap</title>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <!--START SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- END SCROLL TOP BUTTON -->
+    <!-- Start search box -->
+    <div id="mu-search">
+        <div class="mu-search-area">
+            <button class="mu-search-close"><span class="fa fa-close"></span></button>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="mu-search-form">
+                            <input type="search" placeholder="Type Your Keyword(s) & Hit Enter">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End search box -->
+    <!-- Page breadcrumb -->
+
+    <div class="container">
+        <!--<div class="page-header">
+            <h1>Bootstrap FAQ <small>Bootsrap Frequently Asked Questions</small></h1>
+        </div>-->
+        <!-- Bootstrap FAQ - START -->
+
+
+
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>
+                .collapsible {
+                    background-color: #777;
+                    color: white;
+                    cursor: pointer;
+                    padding: 18px;
+                    width: 100%;
+                    border: none;
+                    text-align: left;
+                    outline: none;
+                    font-size: 15px;
+                }
+
+                    .active, .collapsible:hover {
+                        background-color: #555;
+                    }
+
+                .content {
+                    padding: 0 18px;
+                    display: none;
+                    overflow: hidden;
+                    background-color: #f1f1f1;
+                }
+            </style>
+        </head>
+
+        <section id="mu-page-breadcrumb" style="margin-top:50px">
+            <div class="mu-slider-img">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mu-page-breadcrumb-area">
+                            <h2>For better relationship with your kids.</h2>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <body>
+
+            <br /> <br /><br /><br />
+            <button class="collapsible" style="margin-top:50px">How to prepare your child for the first day at school?</button>
+            <div class="content">
+                <p>
+                    <br />
+                    •	Visit the school or classroom before the first day.<br />
+                    •	Shop for school supplies together.<br />
+                    •	Create a school routine, every night before school, get your child’s clothes ready and prepare his or her lunchbox for the following day. This routine encourages talk time between you and your child.<br />
+                    •	Make sure your child get enough rest the night before.<br />
+                    •	Before school starts talk with your child about what he or she should expect, talk to them about the classroom routine, activities, friends, and the teacher.<br />
+                    •	Help your child learn how to socialize and make friends.<br />
+                    •	Show your positive attitude, smile and keep calm, your child will follow you as the leader.<br />
+                </p>
+            </div>
+            <br /><br />
+
+            <button class="collapsible">How to improve your child’s behavior?</button>
+            <div class="content">
+                <p>
+                    <br />
+                    •	Focus on the positive situations only, For example, you can say “You were so focused on your math homework tonight! Keep up the good work,” “That was so nice the way you helped your brother with his homework.” When children get encouraged for doing the right thing, they want to do more of it.<br />
+                    •	Use positive body language to show approval for positive behavior, Positive body language can include a smile, thumbs up, high-five, hug, etc.<br />
+                    •	Quality time with our child is very important, make jokes, listen to his jokes, smile often, say something silly, sing something you would normally say, or anything else that would make him smile/laugh.<br />
+                    •	Show your child how much you love him. Smile at him when he comes into the room, ask about his day, and really listen when he talks.<br />
+                    •	Take an interest in your child’s interests, do activities with your child that involve something he is interested in.<br />
+                    •	Understand your child’s feelings, he often doesn’t understand what he feel, be kind and sympathetic with him and let he knows that you are there to help.<br />
+                    •	Be a role model for good behavior, your children are your mirror whatever you do they will do it to.<br />
+                    •	Keep your promises with your children no matter how small they are, don’t lose their trust.<br />
+                </p>
+            </div>
+
+            <br /><br />
+
+            <button class="collapsible">What to Do When Your Child Won't Go to School?</button>
+            <div class="content">
+                <p>
+                    <br />
+                    •	Check for physical causes, if your child is complaining of physical symptoms.<br />
+                    •	Talk with your child, talk about what's annoying him, the most important message to tell him is that “I believe you can overcome this problem, and I will be there to help you through it.<br />
+                    •	Don’t lecture. Avoid lengthy discussions and debates about the importance of going to school. Lecturing won't do any good, and it may actually make matters worse.<br />
+                    •	Set up a conference, both parents should meet with the teacher.<br />
+                    •	Do not make it nice to stay at home, let your child know that if he's truly ill, he will need to see a doctor, stay in bed and rest, keep the TV off, and so on. Enforce rules about no TV or video games.<br />
+                </p>
+            </div>
+            <br /><br /><br />
+
+
+            <script>
+                var coll = document.getElementsByClassName("collapsible");
+                var i;
+
+                for (i = 0; i < coll.length; i++) {
+                    coll[i].addEventListener("click", function () {
+                        this.classList.toggle("active");
+                        var content = this.nextElementSibling;
+                        if (content.style.display === "block") {
+                            content.style.display = "none";
+                        } else {
+                            content.style.display = "block";
+                        }
+                    });
+                }
+            </script>
+
+        </body>
+</html>
+
+
+
+
+
+<!-- End breadcrumb -->
+<!-- Start contact  -->
+<section id="mu-contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+            <!-- end contact content -->
+        </div>
+    </div>
+    </div>
+    </div>
+</section>
+<!-- End contact  -->
+<!-- Start footer -->
+<footer id="mu-footer">
+
+    <!-- start footer bottom -->
+    <div class="mu-footer-bottom">
+        <div class="container">
+            <div class="mu-footer-bottom-area">
+                <p>&copy; All Right Reserved.</p>
+            </div>
+        </div>
+    </div>
+    <!-- end footer bottom -->
+</footer>
+<!-- End footer -->
+<!-- jQuery library -->
+<script src="~/content/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="~/content/js/bootstrap.js"></script>
+<!-- Slick slider -->
+<script type="text/javascript" src="~/content/js/slick.js"></script>
+<!-- Counter -->
+<script type="text/javascript" src="~/content/js/waypoints.js"></script>
+<script type="text/javascript" src="~/content/js/jquery.counterup.js"></script>
+<!-- Mixit slider -->
+<script type="text/javascript" src="~/content/js/jquery.mixitup.js"></script>
+<!-- Add fancyBox -->
+<script type="text/javascript" src="~/content/js/jquery.fancybox.pack.js"></script>
+
+<!-- Custom js -->
+<script src="~/content/js/custom.js"></script>
+
+<style>
+
+    .faqHeader {
+        font-size: 27px;
+        margin: 20px;
+    }
+
+    .panel-heading [data-toggle="collapse"]:after {
+        font-family: 'Glyphicons Halflings';
+        content: "\e072"; /* "play" icon */
+        float: right;
+        color: #F58723;
+        font-size: 18px;
+        line-height: 22px;
+        /* rotate "play" icon from > (right arrow) to down arrow */
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+
+    .panel-heading [data-toggle="collapse"].collapsed:after {
+        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        color: #454444;
+    }
+</style>
+
+
+</body>
+</html>

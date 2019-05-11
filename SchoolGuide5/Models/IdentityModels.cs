@@ -9,6 +9,12 @@ namespace SchoolGuide5.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int Age { get; set; }
+        public string Address { get; set; }
+        public string SSN { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -24,10 +30,15 @@ namespace SchoolGuide5.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        public DbSet<Schools> Schools { get; set; }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
+
+
+        //public System.Data.Entity.DbSet<SchoolGuide4.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }
