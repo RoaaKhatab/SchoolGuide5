@@ -87,5 +87,11 @@ namespace SchoolGuide4.Controllers
             db.SaveChanges();
             return RedirectToAction("ViewSchools");
         }
+        public ActionResult SchoolDetails(int?id)
+        {
+           
+            return RedirectToAction("Details","Schools");
+        }
+
     }
 }

@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using SchoolGuide5.ViewModels;
 
 namespace SchoolGuide5.Models
 {
@@ -31,6 +32,11 @@ namespace SchoolGuide5.Models
         {
         }
         public DbSet<Schools> Schools { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+       
+
+
+
 
         public static ApplicationDbContext Create()
         {

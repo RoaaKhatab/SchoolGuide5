@@ -53,11 +53,22 @@ namespace SchoolGuide5.Models
 
         [DisplayName("School Phone Number 2")]
 
-        public int Sc_phone2 { get; set; }
+        public int? Sc_phone2 { get; set; }
 
         [DisplayName("School Phone Number 3")]
 
-        public int Sc_phone3 { get; set; }
+        public int? Sc_phone3 { get; set; }
+        public List<Comment> Comments { get; set; }
+
+        //public virtual IList<Comment> Comments { get; set; }
+
+        //public Schools()
+        //{
+        //    Comments = new List<Comment>();
+
+        //}
+
+
 
     }
 }

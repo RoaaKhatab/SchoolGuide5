@@ -1,6 +1,6 @@
 ﻿
 @model IEnumerable<SchoolGuide5.Models.Schools>
-@{
+    @{
     ViewBag.Title = "Filteration";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -59,7 +59,7 @@
                         <td>@item.Sc_Name</td>
 
 
-                        <td> @Html.ActionLink("Show Details", "Details", new { id = item.Sc_id }, FormMethod.Get)</td>
+                        <td> @Html.ActionLink("Show Details", "Details","Schools", new { id = item.Sc_id }, FormMethod.Get)</td>
 
                     </tr>
                 }

@@ -1,0 +1,230 @@
+﻿@model  SchoolGuide5.ViewModels.SchoolComments
+
+@{
+
+
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Schools</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.School.Sc_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.School.Sc_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.School.Sc_Details)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.School.Sc_Details)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.School.Sc_Facebook)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.School.Sc_Facebook)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.School.Sc_Twitter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.School.Sc_Twitter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.School.Sc_instagram)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.School.Sc_instagram)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.School.Sc_Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.School.Sc_Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.School.Sc_Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.School.Sc_Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.School.Sc_Fees_From)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.School.Sc_Fees_From)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.School.Sc_Fees_To)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.School.Sc_Fees_To)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.School.Sc_Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.School.Sc_Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.School.Sc_phone1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.School.Sc_phone1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.School.Sc_phone2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.School.Sc_phone2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.School.Sc_phone3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.School.Sc_phone3)
+        </dd>
+
+
+    </dl>
+</div>
+<div>
+    <h3>Comments</h3>
+    @if (Model.Comment != null)
+    {
+        foreach (var comment in Model.Comment)
+        {
+
+            <div class="rateyo" id="RateStars" style="margin-left: 250px; "></div>
+
+            <p>@comment.C_Details</p>
+            <small class="text-muted">
+                posted by @comment.Username on @comment.C_Date
+            </small>
+
+
+        }
+
+    }
+    else
+    {
+        <p>There are no comments on this school. </p>
+    }
+    @(Html.Partial("_CommentForm", new SchoolGuide5.Models.Comment()))
+</div>
+
+
+
+
+
+
+
+
+
+@*<form id="commentform">
+        <input type="hidden" name="School_id" value="@Model.School.Sc_id" />
+
+        <div class="form-group" >
+            <label> Write Your Comment </label>
+
+            <textarea class="form-control" rows="3" name="Comment" placeholder="write your comment here."></textarea>
+        </div>
+        <button href="#" class="btn btn-success" id="btnComment" type="button">leave your comment </button>
+    </form>*@
+
+
+
+
+
+
+
+
+
+@*<p>*@
+@*@Html.ActionLink("Edit", "Edit", new { id=Model.School.Sc_id }) |*@
+@*@Html.ActionLink("Back to List", "Index")
+    </p>
+    </div>*@
+@*@Html.Partial("AddComment")*@
+@*@Html.Partial("_comment")*@
+
+
+@*@using (Html.BeginForm("AddComment", "Schools", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Schools</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Comment.C_Details, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Comment.C_Details, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Comment.C_Details, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div>
+                @Html.HiddenFor(m => m.School.Sc_id)
+            </div>
+            <p>
+                <button class="btn btn-success" id="btnComment" type="button"> Leave A comment </button>
+            </p>
+        </div>
+    }*@
+
+@*
+
+            $('btnComment').click(function () {
+                $.ajax({
+                    url: "@Url.Action("AddComment","Schools")",
+                    type: "post",
+                    data: $('#commentform').serialize()
+
+                }).done(function (response) {
+                    debugger;
+                    if (response.Success) {
+                        window.location.reload();
+                    }
+                    else {
+                        swal('error!', response.Message, 'error');
+                    }
+
+                    }).fail(function ()){
+                    swal('error!', 'error occured please try again', 'error');
+
+                });
+            });
+    </script>*@

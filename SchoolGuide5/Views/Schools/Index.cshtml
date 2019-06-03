@@ -1,0 +1,106 @@
+﻿@model IEnumerable<SchoolGuide5.Models.Schools>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Sc_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sc_Details)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sc_Facebook)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sc_Twitter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sc_instagram)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sc_Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sc_Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sc_Fees_From)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sc_Fees_To)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sc_Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sc_phone1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sc_phone2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sc_phone3)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_Details)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_Facebook)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_Twitter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_instagram)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_Category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_Fees_From)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_Fees_To)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_phone1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_phone2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_phone3)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Sc_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Sc_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Sc_id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,64 @@
+﻿@model SchoolGuide5.Models.Comment
+@{
+
+
+    ViewBag.Title = "AddComment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("AddComment", "Schools", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Add your comment here.</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+
+            <div class="rateyo" id="RateStars" style="margin-left: 250px; "></div>
+            @Html.HiddenFor(x=>x.Rating,new { id = "RateStarsValue"})
+
+            @Html.LabelFor(model => model.C_Details, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.C_Details, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.C_Details, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Add Comment</button>
+        <div>
+            @Html.HiddenFor(m => m.School_id)
+            @Html.HiddenFor(m => m.UserId)
+            @Html.HiddenFor(m => m.Username)
+        </div>
+
+    </div>
+}
+
+@section JquerySection{
+    <script>
+        var rating = 1.6;
+
+
+        $("#RateStars").rateYo({
+            rating: rating,
+            numStars: 5,
+            precision: 2,
+            starWidth: "24px",
+            spacing: "5px",
+            multiColor: {
+                startColor: "#000000",
+                endColor: "#ffffff"
+            },
+            onInit: function () {
+
+                console.log("On Init");
+            },
+            onSet: function (e, data) {
+                $("#RateStarsValue").val($(this).rateYo("rating"));
+            }
+        })
+    </script>
+}

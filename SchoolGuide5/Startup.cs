@@ -33,7 +33,7 @@ namespace SchoolGuide5
         }
         public void CreateRoles()
         {
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
+            RoleManager<IdentityRole> roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
             IdentityRole role;
             if (!roleManager.RoleExists("Admins"))
             {
