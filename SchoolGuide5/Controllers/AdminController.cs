@@ -93,5 +93,50 @@ namespace SchoolGuide4.Controllers
             return RedirectToAction("Details","Schools");
         }
 
+        /*              FAQ             */
+
+        public ActionResult ViewFAQ()
+
+        {
+
+            return View(db.FAQs.ToList());
+
+        }
+
+        public ActionResult DeleteFAQ(int id)
+        {
+            var faqq = db.FAQs.Where(u => u.FAQ_ID.Equals(id)).SingleOrDefault();
+            db.FAQs.Remove(faqq);
+            db.SaveChanges();
+            return RedirectToAction("ViewFAQ");
+        }
+
+        public ActionResult AddFAQ()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddFAQ(FAQ faq)
+        {
+            db.FAQs.Add(faq);
+            db.SaveChanges();
+
+            return RedirectToAction("ViewFAQ");
+        }
+
+
+        public ActionResult EditFAQ(int id)
+        {
+            return View(db.FAQs.Where(c => c.FAQ_ID.Equals(id)).SingleOrDefault());
+        }
+        [HttpPost]
+        public ActionResult EditFAQ(FAQ faq)
+        {
+            db.Entry<FAQ>(faq).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("ViewFAQ");
+        }
+
     }
 }

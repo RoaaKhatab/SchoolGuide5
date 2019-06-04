@@ -20,18 +20,17 @@ namespace SchoolGuide5.Controllers
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+        
 
         public ActionResult FAQ()
         {
             return View();
         }
         public ActionResult ParentsGuide()
+        {
+            return View();
+        }
+        public ActionResult SchoolCategories()
         {
             return View();
         }

@@ -1,7 +1,37 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<div>
+    <div id="img">
+        <img src="~/content/img/mine/kids.jpg" alt="Kids-image" style="width:100%;">
+        <div class="centered"><h1 style="font-family:sans-serif; font-size:75px">Know more about us!</h1></div>
+    </div>
+    <br /><br />
+    <div>
+        <h3 style="font-family:sans-serif; text-align:center">
+            Welcome to SCHOOL GUIDE, your number one source for knowing the best schools.<br />
+            We're dedicated to giving you the very best of details about schools in Egypt, with a focus on completnes of information, <br /> esae of use and helpfulness.<br />
+            As our graduation project, SCHOOL GUIDE is our idea to facilitate the process of finding a suitable school on parents.<br />
+            We hope you enjoy our products as much as we enjoy offering them to you. <br />
+            If you have any questions or comments, please don't hesitate to contact us.
+        </h3>
+    </div>
+    <br /><br />
+</div>
+
+<style>
+    .img {
+        position: relative;
+        text-align: center;
+        color: black;
+        font-family: sans-serif;
+    }
+
+    .centered {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -80%);
+    }
+</style>

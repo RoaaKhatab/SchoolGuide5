@@ -117,10 +117,10 @@
 
                                 <li><a href="#">About Us</a></li>
                                 <li><a href=@Url.Action("ViewSchools", "Admin")>Schools</a></li>
-                                <li><a href="@Url.Action("Filteration", "Parent")">Explore Schools</a></li>
+                                <li><a href="@Url.Action("Filter", "Schools")">Explore Schools</a></li>
                                 <li><a href=@Url.Action("ViewUsers", "Admin")>Users</a></li>
                                 <li><a href=@Url.Action("ParentsGuide", "Home")>Parents</a></li>
-                                <li><a href=@Url.Action("FAQ", "Home")>FAQ</a></li>
+                                <li><a href=@Url.Action("viewFAQ", "Admin")>FAQ</a></li>
                                 <li><a href=@Url.Action("Contact", "Home")>Contact</a></li>
                                 <li><a href="#" id="mu-search-icon"><i class="fa fa-search"></i></a></li>
                             }
@@ -128,11 +128,11 @@
                             {
                                 <li><a href="#">About Us</a></li>
 
-                                <li><a href="@Url.Action("Filteration", "Parent")">Explore Schools</a></li>
+                                <li><a href="@Url.Action("Filter", "Schools")">Explore Schools</a></li>
                                 @*<li><a href="@Url.Action("WhishList","Parents")>Wishlist</a></li>*@
                                 <li><a href="@Url.Action("ParentsGuide", "Home")">Parents</a></li>
-                                <li><a href="@Url.Action("FAQ", "Home")">FAQ</a></li>
-                                <li><a href="@Url.Action("Contact", "Home")">Contact</a></li>
+                                <li><a href="@Url.Action("viewFAQ", "Admin")">FAQ</a></li>
+                                <li><a href="@Url.Action("SendEmail", "EmailSetup")">Contact</a></li>
                                 <li><a href="#" id="mu-search-icon"><i class="fa fa-search"></i></a></li>
                             }
 
@@ -143,11 +143,11 @@
 
                             <li><a href="#">About Us</a></li>
 
-                            <li><a href="@Url.Action("Filteration", "Parent")">Explore Schools</a></li>
+                            <li><a href="@Url.Action("Filter", "Schools")">Explore Schools</a></li>
 
                             <li><a href="@Url.Action("ParentsGuide", "Home")">Parents Guide</a></li>
-                            <li><a href="@Url.Action("FAQ", "Home")">FAQ</a></li>
-                            <li><a href=@Url.Action("Contact", "Home")>Contact</a></li>
+                            <li><a href="@Url.Action("viewFAQ", "Admin")">FAQ</a></li>
+                            <li><a href=@Url.Action("SendEmail", "EmailSetup")>Contact</a></li>
                             <li><a href="#" id="mu-search-icon"><i class="fa fa-search"></i></a></li>
                         }
 
@@ -273,8 +273,33 @@
     <script src="~/content/js/custom.js"></script>
     <!-- Script for the rating Star-->
 
-    @RenderSection("JquerySection", false)
-    @*<script>
+    <script>
+        var rating = 1.6;
+
+
+        $("#RateStars").rateYo({
+            rating: rating,
+            numStars: 5,
+            precision: 2,
+            starWidth: "24px",
+            spacing: "5px",
+            multiColor: {
+                startColor: "#000000",
+                endColor: "#ffffff"
+            },
+            onInit: function () {
+
+                console.log("On Init");
+            },
+            onSet: function (e, data) {
+                $("#RateStarsValue").val($(this).rateYo("rating"));
+                $(this).rateYo("option", "readOnly", true);
+            }.on("rateyo.set", function () { console.log("rateyo.set"); })
+                .on("rateyo.change", function () { console.log("rateyo.change"); })
+        })
+    </script>
+    @*@RenderSection("JquerySection", false)
+    <script>
 
         $(function () {
 
@@ -321,8 +346,8 @@
                 console.log(data.rating);
             });
         });
-    </script>*@
-
+    </script>
+*@
 
 
     @*

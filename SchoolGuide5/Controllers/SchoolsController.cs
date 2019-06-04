@@ -9,6 +9,8 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using SchoolGuide5.Models;
 using SchoolGuide5.ViewModels;
+using System.Web.UI.WebControls;
+using PagedList;
 
 namespace SchoolGuide5.Controllers
 {
@@ -17,10 +19,97 @@ namespace SchoolGuide5.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Schools
-        //public ActionResult Index()
-        //{
-        //    return View(db.Schools.ToList());
-        //}
+        // search by Name or Category or Address
+        public ActionResult Index(string searchString)
+        {
+            var schools = from c in db.Schools
+                          select c;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                //schools = schools.Where(c => c.Sc_Name == searchString)
+                schools = schools.Where(c => c.Sc_Name.Contains(searchString)
+                || c.Sc_Location.Contains(searchString)
+                || c.Sc_Category.Contains(searchString));
+            }
+
+
+            return View(schools);
+        }
+        // Filteration
+        public ActionResult Filter(string Sc_Name, string Sc_Category
+            , string Sc_Location, int? Sc_Fees_From, int? Sc_Fees_To)
+        {
+            var schools = from c in db.Schools
+                          select c;
+            if (!string.IsNullOrEmpty(Sc_Name))
+            {
+                schools = schools.Where(c => c.Sc_Name.Contains(Sc_Name));
+            }
+            if (!string.IsNullOrEmpty(Sc_Category))
+            {
+                schools = schools.Where(c => c.Sc_Category.Contains(Sc_Category));
+            }
+            if (!string.IsNullOrEmpty(Sc_Location))
+            {
+                schools = schools.Where(c => c.Sc_Location.Contains(Sc_Location));
+            }
+
+            if (Sc_Fees_From != null)
+            {
+
+                schools = schools.Where(c => c.Sc_Fees_From <= Sc_Fees_From);
+
+            }
+            if (Sc_Fees_To != null)
+            {
+
+                schools = schools.Where(c => c.Sc_Fees_To >= Sc_Fees_To);
+
+            }
+
+            return View(schools);
+        }
+        //paging
+        public ActionResult paging(int? page)
+        {
+            var schools = from c in db.Schools
+                          orderby c.Sc_id
+                          select c;
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+            return View(schools.ToPagedList(pageNumber, pageSize));
+        }
+
+        public ActionResult searchpaging(string currentFilter, string searchString, int? page)
+        {
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            var schools = from c in db.Schools
+                          select c;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+
+                schools = schools.Where(c => c.Sc_Name.Contains(searchString)
+                || c.Sc_Location.Contains(searchString)
+                || c.Sc_Category.Contains(searchString));
+            }
+            schools = schools.OrderBy(c => c.Sc_id); // default sorting
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+            return View(schools.ToPagedList(pageNumber, pageSize));
+        }
+
+
 
         // GET: Schools/Details/5
         public ActionResult Details(int? id)

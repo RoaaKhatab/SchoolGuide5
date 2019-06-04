@@ -1,0 +1,51 @@
+﻿@model IEnumerable<SchoolGuide5.Models.FAQ>
+
+@{
+    ViewBag.Title = "ViewFAQ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ViewFAQ</h2>
+@if (User.Identity.IsAuthenticated)
+{
+    if (User.IsInRole("Admins"))
+    {
+        <p>
+            @Html.ActionLink("Create New FAQ", "AddFAQ")
+        </p>
+    }
+}
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Question)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Answer)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Question)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Answer)
+                </td>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    if (User.IsInRole("Admins"))
+                    {
+                        <td>
+                            @Html.ActionLink("Edit", "EditFAQ", new { id = item.FAQ_ID }) |
+                            @Html.ActionLink("Delete", "DeleteFAQ", new { id = item.FAQ_ID })
+                        </td>
+                    }
+                }
+                    </tr>
+            }
+
+        </table>

@@ -46,6 +46,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -175,6 +181,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\EmailSetupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ParentController.cs" />
@@ -182,45 +189,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905291939525_FirstMigration.cs" />
-    <Compile Include="Migrations\201905291939525_FirstMigration.Designer.cs">
-      <DependentUpon>201905291939525_FirstMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201906042026083_First.cs" />
+    <Compile Include="Migrations\201906042026083_First.Designer.cs">
+      <DependentUpon>201906042026083_First.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905300613059_CommentEdit.cs" />
-    <Compile Include="Migrations\201905300613059_CommentEdit.Designer.cs">
-      <DependentUpon>201905300613059_CommentEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905300638089_New.cs" />
-    <Compile Include="Migrations\201905300638089_New.Designer.cs">
-      <DependentUpon>201905300638089_New.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905300700436_Rate.cs" />
-    <Compile Include="Migrations\201905300700436_Rate.Designer.cs">
-      <DependentUpon>201905300700436_Rate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905300759264_Comment1.cs" />
-    <Compile Include="Migrations\201905300759264_Comment1.Designer.cs">
-      <DependentUpon>201905300759264_Comment1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905300921152_Comments2.cs" />
-    <Compile Include="Migrations\201905300921152_Comments2.Designer.cs">
-      <DependentUpon>201905300921152_Comments2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905301341070_Trial.cs" />
-    <Compile Include="Migrations\201905301341070_Trial.Designer.cs">
-      <DependentUpon>201905301341070_Trial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905301500069_Comment3.cs" />
-    <Compile Include="Migrations\201905301500069_Comment3.Designer.cs">
-      <DependentUpon>201905301500069_Comment3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906011427101_rating2.cs" />
-    <Compile Include="Migrations\201906011427101_rating2.Designer.cs">
-      <DependentUpon>201906011427101_rating2.cs</DependentUpon>
+    <Compile Include="Migrations\201906042136209_second.cs" />
+    <Compile Include="Migrations\201906042136209_second.Designer.cs">
+      <DependentUpon>201906042136209_second.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\FAQ.cs" />
+    <Compile Include="Models\gmail.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Schools.cs" />
@@ -334,6 +315,7 @@
     <Content Include="Content\js\jquery.rateyo.min.js" />
     <Content Include="Content\js\slick.js" />
     <Content Include="Content\js\waypoints.js" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -422,6 +404,14 @@
     <Content Include="Views\Schools\AddComment.cshtml" />
     <Content Include="Views\Schools\_comment.cshtml" />
     <Content Include="Views\Schools\_CommentForm.cshtml" />
+    <Content Include="Views\EmailSetup\SendEmail.cshtml" />
+    <Content Include="Views\Admin\ViewFAQ.cshtml" />
+    <Content Include="Views\Admin\AddFAQ.cshtml" />
+    <Content Include="Views\Admin\EditFAQ.cshtml" />
+    <Content Include="Views\Schools\Filter.cshtml" />
+    <Content Include="Views\Schools\paging.cshtml" />
+    <Content Include="Views\Schools\searchpaging.cshtml" />
+    <Content Include="Views\Home\SchoolCategories.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -440,32 +430,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905291939525_FirstMigration.resx">
-      <DependentUpon>201905291939525_FirstMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906042026083_First.resx">
+      <DependentUpon>201906042026083_First.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905300613059_CommentEdit.resx">
-      <DependentUpon>201905300613059_CommentEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905300638089_New.resx">
-      <DependentUpon>201905300638089_New.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905300700436_Rate.resx">
-      <DependentUpon>201905300700436_Rate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905300759264_Comment1.resx">
-      <DependentUpon>201905300759264_Comment1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905300921152_Comments2.resx">
-      <DependentUpon>201905300921152_Comments2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905301341070_Trial.resx">
-      <DependentUpon>201905301341070_Trial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905301500069_Comment3.resx">
-      <DependentUpon>201905301500069_Comment3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906011427101_rating2.resx">
-      <DependentUpon>201906011427101_rating2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906042136209_second.resx">
+      <DependentUpon>201906042136209_second.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

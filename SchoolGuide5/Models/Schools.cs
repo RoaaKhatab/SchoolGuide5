@@ -37,10 +37,10 @@ namespace SchoolGuide5.Models
         public String Sc_Category { get; set; }
 
         [DisplayName("School Fees From")]
-        public String Sc_Fees_From { get; set; }
+        public int Sc_Fees_From { get; set; }
 
         [DisplayName("School Fees To")]
-        public String Sc_Fees_To { get; set; }
+        public int Sc_Fees_To { get; set; }
 
 
         [Required(ErrorMessage = "Location is required")]
@@ -58,6 +58,7 @@ namespace SchoolGuide5.Models
         [DisplayName("School Phone Number 3")]
 
         public int? Sc_phone3 { get; set; }
+
         public List<Comment> Comments { get; set; }
 
         //public virtual IList<Comment> Comments { get; set; }

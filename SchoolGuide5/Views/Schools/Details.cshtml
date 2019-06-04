@@ -127,8 +127,11 @@
         foreach (var comment in Model.Comment)
         {
 
-            <div class="rateyo" id="RateStars" style="margin-left: 250px; "></div>
+    <div class="rateyo" id="RateStars" style="margin-left: 250px; ">
 
+        <p>@comment.Rating </p>
+        
+    </div>
             <p>@comment.C_Details</p>
             <small class="text-muted">
                 posted by @comment.Username on @comment.C_Date
@@ -142,8 +145,11 @@
     {
         <p>There are no comments on this school. </p>
     }
-    @(Html.Partial("_CommentForm", new SchoolGuide5.Models.Comment()))
+
+
+    @*@(Html.Partial("_CommentForm", new SchoolGuide5.Models.Comment(),new ViewDataDictionary(ViewData) { { "Sc_id",Model.School.Sc_id } }))*@
 </div>
+@Html.ActionLink("Add Comment", "AddComment", new { id = Model.School.Sc_id })
 
 
 

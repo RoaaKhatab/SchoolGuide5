@@ -7,13 +7,13 @@ namespace SchoolGuide5.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Comment1 : IMigrationMetadata
+    public sealed partial class second : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Comment1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(second));
         
         string IMigrationMetadata.Id
         {
-            get { return "201905300759264_Comment1"; }
+            get { return "201906042136209_second"; }
         }
         
         string IMigrationMetadata.Source

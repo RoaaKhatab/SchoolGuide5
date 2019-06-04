@@ -10,11 +10,17 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-@using (Html.BeginForm("Index", "Schools", FormMethod.Post))
+@using (Html.BeginForm("Filter", "Schools", FormMethod.Post))
 {
     <div>
-        Search by School Name / Location / Category @Html.TextBox("searchString")
-        <input id="Submit1" type="submit" value="Search" />
+        School Name  @Html.TextBox("Sc_Name")
+        School Category @Html.TextBox("Sc_Category")
+        School Location @Html.TextBox("Sc_Location")
+        School Fees Start From @Html.TextBox("Sc_Fees_From")
+        School Fees Ends at @Html.TextBox("Sc_Fees_To")
+
+
+        <input id="Submit1" type="submit" value="Filter" />
     </div>
 }
 <table class="table">
