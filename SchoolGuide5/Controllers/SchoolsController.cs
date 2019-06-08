@@ -20,20 +20,10 @@ namespace SchoolGuide5.Controllers
 
         // GET: Schools
         // search by Name or Category or Address
-        public ActionResult Index(string searchString)
+        public ActionResult Index()
         {
-            var schools = from c in db.Schools
-                          select c;
-            if (!string.IsNullOrEmpty(searchString))
-            {
-                //schools = schools.Where(c => c.Sc_Name == searchString)
-                schools = schools.Where(c => c.Sc_Name.Contains(searchString)
-                || c.Sc_Location.Contains(searchString)
-                || c.Sc_Category.Contains(searchString));
-            }
+            return View(db.Schools.ToList());
 
-
-            return View(schools);
         }
         // Filteration
         public ActionResult Filter(string Sc_Name, string Sc_Category

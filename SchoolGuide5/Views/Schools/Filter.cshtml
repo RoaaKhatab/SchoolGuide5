@@ -7,9 +7,16 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@if (User.Identity.IsAuthenticated)
+{
+    if (User.IsInRole("Admins"))
+    {
+        <p>
+            @Html.ActionLink("Create New School", "AddSchool","Admin")
+        </p>
+    }
+}
+
 @using (Html.BeginForm("Filter", "Schools", FormMethod.Post))
 {
     <div>
@@ -69,52 +76,67 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_Details)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_Facebook)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_Twitter)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_instagram)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_Image)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_Category)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_Fees_From)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_Fees_To)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_Location)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_phone1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_phone2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_phone3)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Sc_id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Sc_id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Sc_id })
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_Details)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_Facebook)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_Twitter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_instagram)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_Category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_Fees_From)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_Fees_To)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_phone1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_phone2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sc_phone3)
+        </td>
+        @if (User.Identity.IsAuthenticated)
+        {
+            if (User.IsInRole("Admins"))
+            {
+                <td>
+                    @Html.ActionLink("Edit", "EditSchool", "Admin", new { id = item.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Sc_id }) |
+                    @Html.ActionLink("Delete", "DeleteSchool", "Admin", new { id = item.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } })
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.Sc_id })
+                </td>
+
+            }
+        }
+
+    </tr>
     }
 
 </table>

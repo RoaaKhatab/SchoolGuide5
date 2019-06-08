@@ -39,20 +39,14 @@ namespace SchoolGuide4.Controllers
 
         }
 
-        public ActionResult ViewSchools()
-
-        {
-
-            return View(db.Schools.ToList());
-
-        }
+        
 
         public ActionResult DeleteSchool(int id)
         {
             var School = db.Schools.Where(u => u.Sc_id.Equals(id)).SingleOrDefault();
             db.Schools.Remove(School);
             db.SaveChanges();
-            return RedirectToAction("ViewSchools");
+            return RedirectToAction("Index","Schools");
         }
 
 
@@ -72,7 +66,7 @@ namespace SchoolGuide4.Controllers
             db.Schools.Add(School);
             db.SaveChanges();
 
-            return RedirectToAction("ViewSchools");
+            return RedirectToAction("Index","Schools");
         }
 
 
@@ -85,13 +79,9 @@ namespace SchoolGuide4.Controllers
         {
             db.Entry<Schools>(school).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
-            return RedirectToAction("ViewSchools");
+            return RedirectToAction("Index","Schools");
         }
-        public ActionResult SchoolDetails(int?id)
-        {
-           
-            return RedirectToAction("Details","Schools");
-        }
+        
 
         /*              FAQ             */
 

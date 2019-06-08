@@ -197,6 +197,10 @@
     <Compile Include="Migrations\201906042136209_second.Designer.cs">
       <DependentUpon>201906042136209_second.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906082057414_Third.cs" />
+    <Compile Include="Migrations\201906082057414_Third.Designer.cs">
+      <DependentUpon>201906082057414_Third.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -389,10 +393,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Parent\Filteration.cshtml" />
     <Content Include="Views\Admin\AddSchool.cshtml" />
     <Content Include="Views\Admin\EditSchool.cshtml" />
-    <Content Include="Views\Admin\ViewSchools.cshtml" />
     <Content Include="Views\Admin\ViewUsers.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
     <Content Include="Views\Home\ParentsGuide.cshtml" />
@@ -415,6 +417,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Parent\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -435,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906042136209_second.resx">
       <DependentUpon>201906042136209_second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906082057414_Third.resx">
+      <DependentUpon>201906082057414_Third.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

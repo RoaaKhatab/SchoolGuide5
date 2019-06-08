@@ -10,9 +10,7 @@
 
 <h2>paging</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 @using (Html.BeginForm("searchpaging", "Schools", FormMethod.Post))
 {
     <div>
@@ -106,11 +104,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Sc_phone3)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Sc_id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Sc_id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Sc_id })
-            </td>
+            
         </tr>
     }
 

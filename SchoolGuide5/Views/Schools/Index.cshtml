@@ -1,30 +1,22 @@
 ﻿@model IEnumerable<SchoolGuide5.Models.Schools>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "ViewSchools";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>ViewSchools</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New School", "AddSchool","Admin")
 </p>
-@using (Html.BeginForm("Index", "Schools", FormMethod.Post))
-{
-    <div>
-        Search by School Name / Location / Category @Html.TextBox("searchString")
-        <input id="Submit1" type="submit" value="Search" />
-    </div>
-}
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Sc_Name)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sc_Details)
-        </th>
+
+
         <th>
             @Html.DisplayNameFor(model => model.Sc_Facebook)
         </th>
@@ -38,16 +30,13 @@
             @Html.DisplayNameFor(model => model.Sc_Image)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Sc_Category)
+            @Html.DisplayNameFor(model => model.Sc_Location)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Sc_Fees_From)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Sc_Fees_To)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sc_Location)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Sc_phone1)
@@ -83,16 +72,13 @@
                 @Html.DisplayFor(modelItem => item.Sc_Image)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Sc_Category)
+                @Html.DisplayFor(modelItem => item.Sc_Location)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Sc_Fees_From)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Sc_Fees_To)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_Location)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Sc_phone1)
@@ -104,9 +90,9 @@
                 @Html.DisplayFor(modelItem => item.Sc_phone3)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Sc_id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Sc_id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Sc_id })
+                @Html.ActionLink("Details", "Details", new { id = item.Sc_id })|
+                @Html.ActionLink("Edit", "EditSchool","Admin", new { id = item.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } }) |
+                @Html.ActionLink("Delete", "DeleteSchool","Admin", new { id = item.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } })
             </td>
         </tr>
     }

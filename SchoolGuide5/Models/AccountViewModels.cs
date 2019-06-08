@@ -114,6 +114,7 @@ namespace SchoolGuide5.Models
     }
 
 
+
     public class ResetPasswordViewModel
     {
         [Required]

@@ -172,6 +172,7 @@ namespace SchoolGuide5.Controllers
             return View(model);
         }
 
+
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
