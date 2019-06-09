@@ -5,47 +5,43 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ViewFAQ</h2>
-@if (User.Identity.IsAuthenticated)
+<!-- Start Title -->
+
+<div>
+    <h1 style="font-family:sans-serif; font-size:60px; margin-left:500px;">School guide help center!</h1>
+</div>
+
+
+<br /><br />
+@foreach (var item in Model)
 {
-    if (User.IsInRole("Admins"))
-    {
-        <p>
-            @Html.ActionLink("Create New FAQ", "AddFAQ")
-        </p>
-    }
+
+    <h2 style="margin-left:50px; font:bold; color:darkblue">
+        @Html.DisplayFor(modelItem => item.Question)
+    </h2>
+
+    <h3 style="margin-left:60px; color:cornflowerblue">
+        @Html.DisplayFor(modelItem => item.Answer)
+    </h3>
+    <p style="margin-bottom:50px; margin-left:70px; ">
+        <u style="margin-left:70px;">
+            @Html.ActionLink("Edit", "EditFAQ", new { id = item.FAQ_ID })
+        </u>
+
+        <u style="margin-left:50px">
+            @Html.ActionLink("Delete", "DeleteFAQ", new { id = item.FAQ_ID })
+        </u>
+    </p>
+    <hr />
+
 }
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Question)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Answer)
-                </th>
-                <th></th>
-            </tr>
 
-            @foreach (var item in Model)
-            {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Question)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Answer)
-                </td>
-                @if (User.Identity.IsAuthenticated)
-                {
-                    if (User.IsInRole("Admins"))
-                    {
-                        <td>
-                            @Html.ActionLink("Edit", "EditFAQ", new { id = item.FAQ_ID }) |
-                            @Html.ActionLink("Delete", "DeleteFAQ", new { id = item.FAQ_ID })
-                        </td>
-                    }
-                }
-                    </tr>
-            }
 
-        </table>
+
+<button class="btn btn-default" style="margin-left:600px; margin-bottom:100px; margin-top:50px;width:200px">
+    @Html.ActionLink("Create New FAQ", "AddFAQ")
+</button>
+
+
+
+
