@@ -17,6 +17,7 @@ namespace SchoolGuide5.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        ApplicationDbContext db = new ApplicationDbContext();
 
         public AccountController()
         {
@@ -170,6 +171,52 @@ namespace SchoolGuide5.Controllers
 
             // If we got this far, something failed, redisplay form
             return View(model);
+        }
+
+        //EditProfile
+        public ActionResult EditProfile()
+        {
+            var UserID = User.Identity.GetUserId();
+            var user = db.Users.Where(a => a.Id == UserID).SingleOrDefault();
+            EditProfileViewModel profile = new EditProfileViewModel();
+            profile.UserName = user.UserName;
+            profile.Email = user.Email;
+            profile.FirstName = user.FirstName;
+            profile.LastName = user.LastName;
+            profile.Adress = user.Address;
+            profile.Age = user.Age;
+            profile.PhoneNumber = user.PhoneNumber;
+            profile.SSN = user.SSN;
+            return View(profile);
+        }
+
+        [HttpPost]
+        public ActionResult EditProfile(EditProfileViewModel profile)
+        {
+            //************ To check that current user password is correct **************
+
+            var UserID = User.Identity.GetUserId();
+            var CurrentUser = db.Users.Where(a => a.Id == UserID).SingleOrDefault();
+            if (!UserManager.CheckPassword(CurrentUser, profile.CurrentPassword))
+            {
+                ViewBag.Alert = "Current password is not correct, Please enter correct password !";
+            }
+            else
+            {
+                var newPasswordHashed = UserManager.PasswordHasher.HashPassword(profile.NewPassword);
+                CurrentUser.UserName = profile.UserName;
+                CurrentUser.Email = profile.Email;
+                CurrentUser.FirstName = profile.FirstName;
+                CurrentUser.LastName = profile.LastName;
+                CurrentUser.Address = profile.Adress;
+                CurrentUser.Age = profile.Age;
+                CurrentUser.SSN = profile.SSN;
+                CurrentUser.PasswordHash = profile.NewPassword;
+                db.Entry(CurrentUser).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                ViewBag.Message = " Data Updated successfully.";
+            }
+            return View(profile);
         }
 
 

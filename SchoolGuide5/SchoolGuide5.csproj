@@ -414,6 +414,7 @@
     <Content Include="Views\Schools\paging.cshtml" />
     <Content Include="Views\Schools\searchpaging.cshtml" />
     <Content Include="Views\Home\SchoolCategories.cshtml" />
+    <Content Include="Views\Account\EditProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
