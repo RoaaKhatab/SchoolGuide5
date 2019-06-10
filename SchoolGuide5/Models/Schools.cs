@@ -61,6 +61,8 @@ namespace SchoolGuide5.Models
 
         public List<Comment> Comments { get; set; }
 
+        //public ICollection<ApplicationUser> Wishers { get; set; }
+
         //public virtual IList<Comment> Comments { get; set; }
 
         //public Schools()

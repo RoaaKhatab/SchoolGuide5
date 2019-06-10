@@ -1,142 +1,329 @@
 ﻿@model IEnumerable<SchoolGuide5.Models.Schools>
-
 @{
+    
+
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
-@if (User.Identity.IsAuthenticated)
-{
-    if (User.IsInRole("Admins"))
-    {
-        <p>
-            @Html.ActionLink("Create New School", "AddSchool","Admin")
-        </p>
-    }
-}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-@using (Html.BeginForm("Filter", "Schools", FormMethod.Post))
-{
-    <div>
-        School Name  @Html.TextBox("Sc_Name")
-        School Category @Html.TextBox("Sc_Category")
-        School Location @Html.TextBox("Sc_Location")
-        School Fees Start From @Html.TextBox("Sc_Fees_From")
-        School Fees Ends at @Html.TextBox("Sc_Fees_To")
+    <link href="~/Content/css/main.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700" rel="stylesheet" />
+</head>
+<body>
+    <div class="s013">
+        <form>
+            <fieldset>
+                <legend>QUICK FIND YOUR SCHOOL </legend>
+            </fieldset>
 
 
-        <input id="Submit1" type="submit" value="Filter" />
+            @if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("Admins"))
+                {
+                    <p>
+                        @Html.ActionLink("Create New School", "AddSchool", "Admin")
+                    </p>
+                }
+            }
+
+            <div class="inner-form">
+                <div class="left">
+                    <div class="input-wrap first">
+                        <div class="input-field first">
+                            <label>Name</label>
+                            @Html.TextBox("Sc_Name", "", new { placeholder = "Narmer, Maadi,..." })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="inner-form">
+
+                <div class="left">
+                    <div class="input-wrap first">
+                        <div class="input-field first">
+                            <label>Category</label>
+                            @Html.TextBox("Sc_Category", "", new { placeholder = "American,National,..." })
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="inner-form">
+                <div class="left">
+                    <div class="input-wrap first">
+                        <div class="input-field first">
+                            <label>WHAT</label>
+                            @Html.TextBox("Sc_Location", "", new { placeholder = "Helwan, Dokki, ..." })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="inner-form">
+
+                <div class="left">
+                    <div class="input-wrap first">
+                        <div class="input-field first">
+                            <label>WHAT</label>
+                            @Html.TextBox("Sc_Fees_From", "", new { placeholder = "1000" })
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="inner-form">
+
+                <div class="left">
+                    <div class="input-wrap first">
+                        <div class="input-field first">
+                            <label>WHAT</label>
+                            @Html.TextBox("Sc_Fees_To", "", new { placeholder = "5000" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+            <input id="Submit1" type="submit" value="Filter" class="btn-search" style="width:200px; margin-left:300px" />
+            @*<button class="btn-search" type="button">SEARCH</button>*@
+            <br /><br />
+
+
     </div>
-}
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Sc_Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sc_Details)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sc_Facebook)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sc_Twitter)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sc_instagram)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sc_Image)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sc_Category)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sc_Fees_From)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sc_Fees_To)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sc_Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sc_phone1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sc_phone2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sc_phone3)
-        </th>
-        <th></th>
-    </tr>
+    </form>
+    </div>
 
-    @foreach (var item in Model)
-    {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sc_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sc_Details)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sc_Facebook)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sc_Twitter)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sc_instagram)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sc_Image)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sc_Category)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sc_Fees_From)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sc_Fees_To)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sc_Location)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sc_phone1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sc_phone2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sc_phone3)
-        </td>
-        @if (User.Identity.IsAuthenticated)
+
+
+    <table class="table" style="margin-right:-260px; ">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Sc_Name)
+            </th>
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.Sc_Category)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Sc_Location)
+            </th>
+
+        </tr>
+        @foreach (var item in Model)
         {
-            if (User.IsInRole("Admins"))
-            {
+            <tr>
                 <td>
-                    @Html.ActionLink("Edit", "EditSchool", "Admin", new { id = item.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Sc_id }) |
-                    @Html.ActionLink("Delete", "DeleteSchool", "Admin", new { id = item.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } })
+                    @Html.DisplayFor(modelItem => item.Sc_Name)
                 </td>
-
-            }
-            else
-            {
+                
                 <td>
-                    @Html.ActionLink("Details", "Details", new { id = item.Sc_id })
+                    @Html.DisplayFor(modelItem => item.Sc_Category)
                 </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sc_Location)
+                </td>
+                
+                @if (User.Identity.IsAuthenticated)
+                {
+                    if (User.IsInRole("Admins"))
+                    {
+                        <td>
+                            @Html.ActionLink("Edit", "EditSchool", "Admin", new { id = item.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Sc_id }) |
+                            @Html.ActionLink("Delete", "DeleteSchool", "Admin", new { id = item.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } })
+                        </td>
 
+                    }
+                    else
+                    {
+                        <td>
+                            @Html.ActionLink("Details", "Details", new { id = item.Sc_id })
+                        </td>
+
+                    }
+                }
+            </tr>
+        }
+    </table>
+
+
+
+    <script src="~/Content/js/choices.js"></script>
+    <script>
+        const choices = new Choices('[data-trigger]',
+            {
+                searchEnabled: false,
+                itemSelectText: '',
+            });
+
+    </script>
+</body>
+</html>
+
+
+
+
+@*@model IEnumerable<SchoolGuide5.Models.Schools>
+
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Index</h2>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        if (User.IsInRole("Admins"))
+        {
+            <p>
+                @Html.ActionLink("Create New School", "AddSchool","Admin")
+            </p>
+        }
+    }
+
+    @using (Html.BeginForm("Filter", "Schools", FormMethod.Post))
+    {
+        <div>
+            School Name  @Html.TextBox("Sc_Name")
+            School Category @Html.TextBox("Sc_Category")
+            School Location @Html.TextBox("Sc_Location")
+            School Fees Start From @Html.TextBox("Sc_Fees_From")
+            School Fees Ends at @Html.TextBox("Sc_Fees_To")
+
+
+            <input id="Submit1" type="submit" value="Filter" />
+        </div>
+    }
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Sc_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sc_Details)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sc_Facebook)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sc_Twitter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sc_instagram)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sc_Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sc_Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sc_Fees_From)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sc_Fees_To)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sc_Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sc_phone1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sc_phone2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sc_phone3)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sc_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sc_Details)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sc_Facebook)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sc_Twitter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sc_instagram)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sc_Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sc_Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sc_Fees_From)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sc_Fees_To)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sc_Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sc_phone1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sc_phone2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sc_phone3)
+            </td>
+            @if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("Admins"))
+                {
+                    <td>
+                        @Html.ActionLink("Edit", "EditSchool", "Admin", new { id = item.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Sc_id }) |
+                        @Html.ActionLink("Delete", "DeleteSchool", "Admin", new { id = item.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } })
+                    </td>
+
+                }
+                else
+                {
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.Sc_id })
+                    </td>
+
+                }
             }
+
+        </tr>
         }
 
-    </tr>
-    }
-
-</table>
+    </table>*@

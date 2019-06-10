@@ -1,5 +1,4 @@
 ﻿@model  SchoolGuide5.ViewModels.SchoolComments
-
 @{
 
 
@@ -7,131 +6,66 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>Schools</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.School.Sc_Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.School.Sc_Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.School.Sc_Details)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.School.Sc_Details)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.School.Sc_Facebook)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.School.Sc_Facebook)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.School.Sc_Twitter)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.School.Sc_Twitter)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.School.Sc_instagram)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.School.Sc_instagram)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.School.Sc_Image)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.School.Sc_Image)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.School.Sc_Category)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.School.Sc_Category)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.School.Sc_Fees_From)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.School.Sc_Fees_From)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.School.Sc_Fees_To)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.School.Sc_Fees_To)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.School.Sc_Location)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.School.Sc_Location)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.School.Sc_phone1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.School.Sc_phone1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.School.Sc_phone2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.School.Sc_phone2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.School.Sc_phone3)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.School.Sc_phone3)
-        </dd>
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading"> <h4 style="color: skyblue ; font-size: 20px ;">School Information</h4></div>
+            <div class="panel-body">
+                <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+                    <img alt="School Pic" src="~/Uploads/@Html.DisplayFor(model=>model.School.Sc_Image)" id="profile-image1" style="height:250px ;
+width: 350px ;">
 
 
-    </dl>
+                </div>
+                <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+                    <div class="container">
+                        <h2>@Html.DisplayFor(model => model.School.Sc_Name)</h2>
+
+
+
+                    </div>
+                    <hr>
+                    <ul class="container details">
+
+                        <li><p class="one" style="width:600px;"> <b>@Html.DisplayNameFor(model => model.School.Sc_Category)</b>: @Html.DisplayFor(model => model.School.Sc_Category)</p></li>
+                        <li><p class="one" style="width:600px;"> <b>@Html.DisplayNameFor(model => model.School.Sc_Fees_From)</b>: @Html.DisplayFor(model => model.School.Sc_Fees_From)</p></li>
+                        <li><p class="one" style="width:600px;"> <b>@Html.DisplayNameFor(model => model.School.Sc_Fees_To)</b>: @Html.DisplayFor(model => model.School.Sc_Fees_To)</p></li>
+                        <li><p class="one" style="width:600px;"><b> @Html.DisplayNameFor(model => model.School.Sc_Location)</b>: @Html.DisplayFor(model => model.School.Sc_Location)</p></li>
+                        <li><p class="one" style="width:600px;"><b> @Html.DisplayNameFor(model => model.School.Sc_Details)</b>: @Html.DisplayFor(model => model.School.Sc_Details)</p></li>
+                    </ul>
+                    <hr>
+                    <div class="col-sm-5 col-xs-6 tital ">SCHOOL CONTACT :</div> <br /> <br />
+                    <ul class="container details">
+                        <li><p class="fa fa-facebook one" style="width:600px;"> <b>@Html.DisplayNameFor(model => model.School.Sc_Facebook)</b>: <a>@Html.DisplayFor(model => model.School.Sc_Facebook)</a></p></li>
+                        <li><p class="fa fa-twitter one" style="width:600px;"><b> @Html.DisplayNameFor(model => model.School.Sc_Twitter)</b>: <a>@Html.DisplayFor(model => model.School.Sc_Twitter)</a></p></li>
+                        <li><p class="fa fa-facebook one" style="width:600px;"><b> @Html.DisplayNameFor(model => model.School.Sc_instagram)</b>: <a>@Html.DisplayFor(model => model.School.Sc_instagram)</a></p></li>
+                        <br />
+                        <li><p style="width:400px;"> <b>@Html.DisplayNameFor(model => model.School.Sc_phone1)</b>: @Html.DisplayFor(model => model.School.Sc_phone1)</p></li>
+                        <li><p style="width:400px;"> <b>@Html.DisplayNameFor(model => model.School.Sc_phone2)</b>: @Html.DisplayFor(model => model.School.Sc_phone2)</p></li>
+                        <li><p style="width:400px;"> <b>@Html.DisplayNameFor(model => model.School.Sc_phone3)</b>: @Html.DisplayFor(model => model.School.Sc_phone3)</p></li>
+                    </ul>
+                    <ul>
+                        @Html.ActionLink("Add To Wishlist", "AddToWhishlist", "Parent", new { id = Model.School.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } })
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div>
+
+
     <h3>Comments</h3>
     @if (Model.Comment != null)
     {
         foreach (var comment in Model.Comment)
         {
 
-    <div class="rateyo" id="RateStars" style="margin-left: 250px; ">
+            <div class="rateyo" id="RateStars" style="margin-left: 250px; ">
+                <p>@comment.Rating </p>
 
-        <p>@comment.Rating </p>
-        
-    </div>
+            </div>
             <p>@comment.C_Details</p>
             <small class="text-muted">
                 posted by @comment.Username on @comment.C_Date
@@ -146,10 +80,176 @@
         <p>There are no comments on this school. </p>
     }
 
-
     @*@(Html.Partial("_CommentForm", new SchoolGuide5.Models.Comment(),new ViewDataDictionary(ViewData) { { "Sc_id",Model.School.Sc_id } }))*@
 </div>
 @Html.ActionLink("Add Comment", "AddComment", new { id = Model.School.Sc_id })
+
+
+
+
+
+
+
+
+@*@model  SchoolGuide5.ViewModels.SchoolComments
+
+    @{
+
+
+        ViewBag.Title = "Details";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Details</h2>
+
+    <div>
+        <h4>Schools</h4>
+        <hr />
+        @Html.ActionLink("Add To Wishlist", "AddToWhishlist","Parent", new { id = Model.School.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } })
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.School.Sc_Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.School.Sc_Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.School.Sc_Details)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.School.Sc_Details)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.School.Sc_Facebook)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.School.Sc_Facebook)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.School.Sc_Twitter)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.School.Sc_Twitter)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.School.Sc_instagram)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.School.Sc_instagram)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.School.Sc_Image)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.School.Sc_Image)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.School.Sc_Category)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.School.Sc_Category)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.School.Sc_Fees_From)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.School.Sc_Fees_From)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.School.Sc_Fees_To)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.School.Sc_Fees_To)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.School.Sc_Location)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.School.Sc_Location)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.School.Sc_phone1)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.School.Sc_phone1)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.School.Sc_phone2)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.School.Sc_phone2)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.School.Sc_phone3)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.School.Sc_phone3)
+            </dd>
+
+
+        </dl>
+    </div>
+    <div>
+        <h3>Comments</h3>
+        @if (Model.Comment != null)
+        {
+            foreach (var comment in Model.Comment)
+            {
+
+        <div class="rateyo" id="RateStars" style="margin-left: 250px; ">
+
+            <p class="rateyo" id="readonly-widg">@comment.Rating  </p>
+
+        </div>
+                <p>@comment.C_Details</p>
+                <small class="text-muted">
+                    posted by @comment.Username on @comment.C_Date
+                </small>
+
+
+            }
+
+        }
+        else
+        {
+            <p>There are no comments on this school. </p>
+        }
+
+
+        @*(Html.Partial("_CommentForm", new SchoolGuide5.Models.Comment(),new ViewDataDictionary(ViewData) { { "Sc_id",Model.School.Sc_id } }))*@
+@*</div>
+    @Html.ActionLink("Add Comment", "AddComment", new { id = Model.School.Sc_id })*@
+
+
+
+
+
+
 
 
 

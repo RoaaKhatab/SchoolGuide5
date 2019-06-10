@@ -1,0 +1,61 @@
+﻿@model IEnumerable<SchoolGuide5.Models.Whishlist>
+
+@{
+
+
+    ViewBag.Title = "Whishlist";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Whishlist </h2>
+
+<div>
+        <hr />
+    
+            @*<div class="panel panel-info">
+                <div class="panel-heading">
+                </div>*@
+                <div class="panel-body">
+                    <div id="update-message">
+                    </div>
+                    <table class="table table-striped table-hover ">
+                        <thead>
+                            <tr>
+                                <th>
+                                    School Name
+                                </th>
+
+                                <th></th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in Model)
+                        {
+                            <tr id="row-@item.Whish_id">
+                                <td>
+                                    @item.School.Sc_Name
+                                </td>
+
+                                <td>
+                                    @Html.ActionLink("Remove From Whishlist", "RemoveFromWhishlist", "Parent", new { id = item.Whish_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } }) 
+
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                    @*<button type="button" class="btn btn-success btn-sm" onclick="location.href='@Url.Action("AddressAndPayment", "Checkout")'">
+                            Check Out &raquo;
+                        </button>*@
+                </div>
+            </div>
+        
+       
+
+
+       
+
+
+
+</div>
+
+

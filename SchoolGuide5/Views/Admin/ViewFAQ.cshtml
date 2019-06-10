@@ -8,7 +8,7 @@
 <!-- Start Title -->
 
 <div>
-    <h1 style="font-family:sans-serif; font-size:60px; margin-left:500px;">School guide help center!</h1>
+    <h1 style="font-family:sans-serif; font-size:60px; margin-left:400px;">School guide help center!</h1>
 </div>
 
 
@@ -23,24 +23,41 @@
     <h3 style="margin-left:60px; color:cornflowerblue">
         @Html.DisplayFor(modelItem => item.Answer)
     </h3>
-    <p style="margin-bottom:50px; margin-left:70px; ">
-        <u style="margin-left:70px;">
-            @Html.ActionLink("Edit", "EditFAQ", new { id = item.FAQ_ID })
-        </u>
 
-        <u style="margin-left:50px">
-            @Html.ActionLink("Delete", "DeleteFAQ", new { id = item.FAQ_ID })
-        </u>
-    </p>
-    <hr />
+    if (User.Identity.IsAuthenticated)
+    {
+        if (User.IsInRole("Admins"))
+        {
+            <p style="margin-bottom:50px; margin-left:70px; ">
+                <u style="margin-left:70px;">
+                    @Html.ActionLink("Edit", "EditFAQ", new { id = item.FAQ_ID })
+                </u>
+
+                <u style="margin-left:50px">
+                    @Html.ActionLink("Delete", "DeleteFAQ", new { id = item.FAQ_ID })
+                </u>
+            </p>
+            <hr />
+
+        }
+    }
+
 
 }
 
 
 
-<button class="btn btn-default" style="margin-left:600px; margin-bottom:100px; margin-top:50px;width:200px">
-    @Html.ActionLink("Create New FAQ", "AddFAQ")
-</button>
+@if (User.Identity.IsAuthenticated)
+{
+    if (User.IsInRole("Admins"))
+    {
+        <button class="btn btn-default" style="margin-left:600px; margin-bottom:100px; margin-top:50px;width:200px">
+            @Html.ActionLink("Create New FAQ", "AddFAQ")
+        </button>
+
+    }
+}
+
 
 
 

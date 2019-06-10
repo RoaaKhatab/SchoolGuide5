@@ -201,6 +201,18 @@
     <Compile Include="Migrations\201906082057414_Third.Designer.cs">
       <DependentUpon>201906082057414_Third.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906101227146_Whishlist.cs" />
+    <Compile Include="Migrations\201906101227146_Whishlist.Designer.cs">
+      <DependentUpon>201906101227146_Whishlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906101559229_Whishlist2.cs" />
+    <Compile Include="Migrations\201906101559229_Whishlist2.Designer.cs">
+      <DependentUpon>201906101559229_Whishlist2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906101725197_Whishlist3.cs" />
+    <Compile Include="Migrations\201906101725197_Whishlist3.Designer.cs">
+      <DependentUpon>201906101725197_Whishlist3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -209,6 +221,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Schools.cs" />
+    <Compile Include="Models\Whishlist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CommentViewModel.cs" />
@@ -219,12 +232,15 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\AboutCSS\style2.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\font-awesome.css" />
     <Content Include="Content\css\jquery.fancybox.css" />
     <Content Include="Content\css\jquery.rateyo.min.css" />
+    <Content Include="Content\css\main.css" />
     <Content Include="Content\css\slick.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\style3.css" />
     <Content Include="Content\css\theme-color\burlywood-theme.css" />
     <Content Include="Content\css\theme-color\dark-red-theme.css" />
     <Content Include="Content\css\theme-color\default-theme.css" />
@@ -238,6 +254,58 @@
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\img\about-us.jpg" />
+    <Content Include="Content\img\AboutImages\arrowws.png" />
+    <Content Include="Content\img\AboutImages\bg_body.jpg" />
+    <Content Include="Content\img\AboutImages\big1.jpg" />
+    <Content Include="Content\img\AboutImages\big2.jpg" />
+    <Content Include="Content\img\AboutImages\big3.jpg" />
+    <Content Include="Content\img\AboutImages\big4.jpg" />
+    <Content Include="Content\img\AboutImages\big5.jpg" />
+    <Content Include="Content\img\AboutImages\big6.jpg" />
+    <Content Include="Content\img\AboutImages\big7.jpg" />
+    <Content Include="Content\img\AboutImages\big8.jpg" />
+    <Content Include="Content\img\AboutImages\big9.jpg" />
+    <Content Include="Content\img\AboutImages\bq_bot_bg.png" />
+    <Content Include="Content\img\AboutImages\envel.png" />
+    <Content Include="Content\img\AboutImages\favicon.ico" />
+    <Content Include="Content\img\AboutImages\hands-together-all-in.jpg" />
+    <Content Include="Content\img\AboutImages\logo.png" />
+    <Content Include="Content\img\AboutImages\magnify.png" />
+    <Content Include="Content\img\AboutImages\marker.png" />
+    <Content Include="Content\img\AboutImages\marker1.png" />
+    <Content Include="Content\img\AboutImages\PAFF_010317_selfcontrolfriends-609x419.jpg" />
+    <Content Include="Content\img\AboutImages\page1_img1.jpg" />
+    <Content Include="Content\img\AboutImages\page1_img2.jpg" />
+    <Content Include="Content\img\AboutImages\page1_img3.jpg" />
+    <Content Include="Content\img\AboutImages\page1_img4.jpg" />
+    <Content Include="Content\img\AboutImages\page1_img5.jpg" />
+    <Content Include="Content\img\AboutImages\page2_img1.jpg" />
+    <Content Include="Content\img\AboutImages\page3_img1.jpg" />
+    <Content Include="Content\img\AboutImages\page3_img2.jpg" />
+    <Content Include="Content\img\AboutImages\page3_img3.jpg" />
+    <Content Include="Content\img\AboutImages\page3_img4.jpg" />
+    <Content Include="Content\img\AboutImages\page3_img5.jpg" />
+    <Content Include="Content\img\AboutImages\page3_img6.jpg" />
+    <Content Include="Content\img\AboutImages\page3_img7.jpg" />
+    <Content Include="Content\img\AboutImages\page3_img8.jpg" />
+    <Content Include="Content\img\AboutImages\page3_img9.jpg" />
+    <Content Include="Content\img\AboutImages\page4_img1.jpg" />
+    <Content Include="Content\img\AboutImages\page4_img2.jpg" />
+    <Content Include="Content\img\AboutImages\page4_img3.jpg" />
+    <Content Include="Content\img\AboutImages\page4_img4.jpg" />
+    <Content Include="Content\img\AboutImages\page4_img5.jpg" />
+    <Content Include="Content\img\AboutImages\page4_img6.jpg" />
+    <Content Include="Content\img\AboutImages\page5_img1.jpg" />
+    <Content Include="Content\img\AboutImages\page5_img2.jpg" />
+    <Content Include="Content\img\AboutImages\preloader.gif" />
+    <Content Include="Content\img\AboutImages\prevnext.png" />
+    <Content Include="Content\img\AboutImages\select.png" />
+    <Content Include="Content\img\AboutImages\slide.jpg" />
+    <Content Include="Content\img\AboutImages\slide1.jpg" />
+    <Content Include="Content\img\AboutImages\slide2.jpg" />
+    <Content Include="Content\img\AboutImages\slide3.jpg" />
+    <Content Include="Content\img\AboutImages\socials.png" />
+    <Content Include="Content\img\AboutImages\totop.png" />
     <Content Include="Content\img\blog\blog-1.jpg" />
     <Content Include="Content\img\blog\blog-2.jpg" />
     <Content Include="Content\img\blog\blog-3.jpg" />
@@ -246,6 +314,7 @@
     <Content Include="Content\img\courses\2.jpg" />
     <Content Include="Content\img\courses\3.jpg" />
     <Content Include="Content\img\favicon.ico" />
+    <Content Include="Content\img\Fun-And-Fascinating-Ways-To-Motivate-Children-To-Learn-with-Assignment-Box.jpg" />
     <Content Include="Content\img\gallery\1-960x750.jpg" />
     <Content Include="Content\img\gallery\20171123_d_DSCF4816.jpg" />
     <Content Include="Content\img\gallery\36738345054_621ddc5ed7_b.jpg" />
@@ -299,6 +368,7 @@
     <Content Include="Content\img\mine\Gerberas_Little_girls_498917_3840x2400.jpg" />
     <Content Include="Content\img\mine\kids-photo-1.jpg" />
     <Content Include="Content\img\mine\us.png" />
+    <Content Include="Content\img\Searchs_013.png" />
     <Content Include="Content\img\slider\1.jpg" />
     <Content Include="Content\img\slider\2.jpg" />
     <Content Include="Content\img\slider\3.jpg" />
@@ -310,14 +380,35 @@
     <Content Include="Content\img\testimonial-2.png" />
     <Content Include="Content\img\testimonial-3.png" />
     <Content Include="Content\img\testimonial-bg.jpg" />
+    <Content Include="Content\js\AboutJS\forms.js" />
+    <Content Include="Content\js\AboutJS\html5shiv.js" />
+    <Content Include="Content\js\AboutJS\jquery-migrate-1.1.1.js" />
+    <Content Include="Content\js\AboutJS\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Content\js\AboutJS\jquery.carouFredSel-6.1.0-packed.js" />
+    <Content Include="Content\js\AboutJS\jquery.easing.1.3.js" />
+    <Content Include="Content\js\AboutJS\jquery.equalheights.js" />
+    <Content Include="Content\js\AboutJS\jquery.jqtransform.js" />
+    <Content Include="Content\js\AboutJS\jquery.js" />
+    <Content Include="Content\js\AboutJS\jquery.touchSwipe.min.js" />
+    <Content Include="Content\js\AboutJS\jquery.ui.totop.js" />
+    <Content Include="Content\js\AboutJS\PIE.htc" />
+    <Content Include="Content\js\AboutJS\sForm.js" />
+    <Content Include="Content\js\AboutJS\superfish.js" />
+    <Content Include="Content\js\AboutJS\tms-0.4.1.js" />
+    <Content Include="Content\js\AboutJS\touchTouch.jquery.js" />
     <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\choices.js" />
+    <Content Include="Content\js\custom-materialize.js" />
     <Content Include="Content\js\custom.js" />
+    <Content Include="Content\js\flatpickr.js" />
     <Content Include="Content\js\jquery.counterup.js" />
     <Content Include="Content\js\jquery.fancybox.pack.js" />
     <Content Include="Content\js\jquery.min.js" />
     <Content Include="Content\js\jquery.mixitup.js" />
     <Content Include="Content\js\jquery.rateyo.min.js" />
+    <Content Include="Content\js\mainFaq.js" />
     <Content Include="Content\js\slick.js" />
+    <Content Include="Content\js\util.js" />
     <Content Include="Content\js\waypoints.js" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
@@ -415,10 +506,11 @@
     <Content Include="Views\Schools\searchpaging.cshtml" />
     <Content Include="Views\Home\SchoolCategories.cshtml" />
     <Content Include="Views\Account\EditProfile.cshtml" />
+    <Content Include="Views\Parent\Whishlist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Parent\" />
+    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -442,6 +534,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906082057414_Third.resx">
       <DependentUpon>201906082057414_Third.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906101227146_Whishlist.resx">
+      <DependentUpon>201906101227146_Whishlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906101559229_Whishlist2.resx">
+      <DependentUpon>201906101559229_Whishlist2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906101725197_Whishlist3.resx">
+      <DependentUpon>201906101725197_Whishlist3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

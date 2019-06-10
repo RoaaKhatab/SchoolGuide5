@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -15,6 +16,7 @@ namespace SchoolGuide5.Models
         public int Age { get; set; }
         public string Address { get; set; }
         public string SSN { get; set; }
+        //public virtual ICollection<Schools> Whishlist { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -34,13 +36,23 @@ namespace SchoolGuide5.Models
         public DbSet<Schools> Schools { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<FAQ> FAQs { get; set; }
-                           
+        public DbSet<Whishlist> Whishlist { get; set; }
+
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
 
         public System.Data.Entity.DbSet<SchoolGuide5.Models.gmail> gmails { get; set; }
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating(modelBuilder);
+        //    modelBuilder.Entity<ApplicationUser>()
+        //        .HasMany(x => x.Whishlist)
+        //        .WithMany(x => x.Wishers)
+        //        .Map(x => x.ToTable("UsersWhishlist"));
+        //}
 
 
 

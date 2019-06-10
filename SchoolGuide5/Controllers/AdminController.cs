@@ -56,17 +56,19 @@ namespace SchoolGuide4.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddSchool(Schools School, HttpPostedFileBase upload)
+        public ActionResult AddSchool(Schools School, HttpPostedFileBase Upload)
         {
 
 
             //string path = Path.Combine(Server.MapPath("~/Uploads"), upload.FileName);
             //upload.SaveAs(path);
             // School.Sc_Image = upload.FileName;
+            string path = Path.Combine(Server.MapPath("~/Uploads"), Upload.FileName);
+            Upload.SaveAs(path);
             db.Schools.Add(School);
+            School.Sc_Image = Upload.FileName;
             db.SaveChanges();
-
-            return RedirectToAction("Index","Schools");
+            return RedirectToAction("Index", "Schools");
         }
 
 
