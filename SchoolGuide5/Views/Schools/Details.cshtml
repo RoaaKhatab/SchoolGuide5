@@ -14,6 +14,12 @@
                 <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
                     <img alt="School Pic" src="~/Uploads/@Html.DisplayFor(model=>model.School.Sc_Image)" id="profile-image1" style="height:250px ;
 width: 350px ;">
+                    <ul>
+                        @Html.ActionLink("Add To Wishlist", "AddToWhishlist", "Parent", new { id = Model.School.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } })
+                    </ul>
+                    <ul>
+                        @Html.ActionLink("Download Application", "SchoolApplication", "Schools", new { id = Model.School.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } })
+                    </ul>
 
 
                 </div>
@@ -44,9 +50,34 @@ width: 350px ;">
                         <li><p style="width:400px;"> <b>@Html.DisplayNameFor(model => model.School.Sc_phone2)</b>: @Html.DisplayFor(model => model.School.Sc_phone2)</p></li>
                         <li><p style="width:400px;"> <b>@Html.DisplayNameFor(model => model.School.Sc_phone3)</b>: @Html.DisplayFor(model => model.School.Sc_phone3)</p></li>
                     </ul>
-                    <ul>
-                        @Html.ActionLink("Add To Wishlist", "AddToWhishlist", "Parent", new { id = Model.School.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } })
-                    </ul>
+                    
+                    <h3>Comments</h3>
+                    @if (Model.Comment != null)
+                    {
+                        foreach (var comment in Model.Comment)
+                        {
+
+                            
+                            @*<div class="rateyo" id="RateStars" style="margin-left: 250px; ">
+                                <p>@comment.Rating </p>
+
+                            </div>*@
+                            <p>@comment.C_Details</p>
+                            <small class="text-muted">
+                                posted by @comment.Username on @comment.C_Date
+                            </small>
+
+
+                        }
+
+                    }
+                    else
+                    {
+                        <p>There are no comments on this school. </p>
+                    }
+
+                    @*@(Html.Partial("_CommentForm", new SchoolGuide5.Models.Comment(),new ViewDataDictionary(ViewData) { { "Sc_id",Model.School.Sc_id } }))*@
+                    @Html.ActionLink("Add Comment", "AddComment", new { id = Model.School.Sc_id })
 
                 </div>
             </div>
@@ -56,33 +87,9 @@ width: 350px ;">
 <div>
 
 
-    <h3>Comments</h3>
-    @if (Model.Comment != null)
-    {
-        foreach (var comment in Model.Comment)
-        {
-
-            <div class="rateyo" id="RateStars" style="margin-left: 250px; ">
-                <p>@comment.Rating </p>
-
-            </div>
-            <p>@comment.C_Details</p>
-            <small class="text-muted">
-                posted by @comment.Username on @comment.C_Date
-            </small>
-
-
-        }
-
-    }
-    else
-    {
-        <p>There are no comments on this school. </p>
-    }
-
-    @*@(Html.Partial("_CommentForm", new SchoolGuide5.Models.Comment(),new ViewDataDictionary(ViewData) { { "Sc_id",Model.School.Sc_id } }))*@
+    
 </div>
-@Html.ActionLink("Add Comment", "AddComment", new { id = Model.School.Sc_id })
+
 
 
 

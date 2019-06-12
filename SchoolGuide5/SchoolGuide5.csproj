@@ -213,6 +213,10 @@
     <Compile Include="Migrations\201906101725197_Whishlist3.Designer.cs">
       <DependentUpon>201906101725197_Whishlist3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906111913304_SchoolAPP.cs" />
+    <Compile Include="Migrations\201906111913304_SchoolAPP.Designer.cs">
+      <DependentUpon>201906111913304_SchoolAPP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -251,6 +255,20 @@
     <Content Include="Content\css\theme-color\red-theme.css" />
     <Content Include="Content\css\theme-color\violet-theme.css" />
     <Content Include="Content\css\theme-color\yellow-theme.css" />
+    <Content Include="Content\css\FontAwesomecss\all.css" />
+    <Content Include="Content\css\FontAwesomecss\all.min.css" />
+    <Content Include="Content\css\FontAwesomecss\brands.css" />
+    <Content Include="Content\css\FontAwesomecss\brands.min.css" />
+    <Content Include="Content\css\FontAwesomecss\fontawesome.css" />
+    <Content Include="Content\css\FontAwesomecss\fontawesome.min.css" />
+    <Content Include="Content\css\FontAwesomecss\regular.css" />
+    <Content Include="Content\css\FontAwesomecss\regular.min.css" />
+    <Content Include="Content\css\FontAwesomecss\solid.css" />
+    <Content Include="Content\css\FontAwesomecss\solid.min.css" />
+    <Content Include="Content\css\FontAwesomecss\svg-with-js.css" />
+    <Content Include="Content\css\FontAwesomecss\svg-with-js.min.css" />
+    <Content Include="Content\css\FontAwesomecss\v4-shims.css" />
+    <Content Include="Content\css\FontAwesomecss\v4-shims.min.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\img\about-us.jpg" />
@@ -401,10 +419,23 @@
     <Content Include="Content\js\custom-materialize.js" />
     <Content Include="Content\js\custom.js" />
     <Content Include="Content\js\flatpickr.js" />
+    <Content Include="Content\js\FontAwesomejs\all.js" />
+    <Content Include="Content\js\FontAwesomejs\all.min.js" />
+    <Content Include="Content\js\FontAwesomejs\brands.js" />
+    <Content Include="Content\js\FontAwesomejs\brands.min.js" />
+    <Content Include="Content\js\FontAwesomejs\fontawesome.js" />
+    <Content Include="Content\js\FontAwesomejs\fontawesome.min.js" />
+    <Content Include="Content\js\FontAwesomejs\regular.js" />
+    <Content Include="Content\js\FontAwesomejs\regular.min.js" />
+    <Content Include="Content\js\FontAwesomejs\solid.js" />
+    <Content Include="Content\js\FontAwesomejs\solid.min.js" />
+    <Content Include="Content\js\FontAwesomejs\v4-shims.js" />
+    <Content Include="Content\js\FontAwesomejs\v4-shims.min.js" />
     <Content Include="Content\js\jquery.counterup.js" />
     <Content Include="Content\js\jquery.fancybox.pack.js" />
     <Content Include="Content\js\jquery.min.js" />
     <Content Include="Content\js\jquery.mixitup.js" />
+    <Content Include="Content\js\jquery.rateyo.js" />
     <Content Include="Content\js\jquery.rateyo.min.js" />
     <Content Include="Content\js\mainFaq.js" />
     <Content Include="Content\js\slick.js" />
@@ -510,6 +541,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="UploadsPdf\" />
     <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
@@ -543,6 +575,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906101725197_Whishlist3.resx">
       <DependentUpon>201906101725197_Whishlist3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906111913304_SchoolAPP.resx">
+      <DependentUpon>201906111913304_SchoolAPP.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

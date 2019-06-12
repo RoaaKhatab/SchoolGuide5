@@ -11,6 +11,7 @@ using SchoolGuide5.Models;
 using SchoolGuide5.ViewModels;
 using System.Web.UI.WebControls;
 using PagedList;
+using System.IO;
 
 namespace SchoolGuide5.Controllers
 {
@@ -97,6 +98,19 @@ namespace SchoolGuide5.Controllers
             int pageSize = 5;
             int pageNumber = (page ?? 1);
             return View(schools.ToPagedList(pageNumber, pageSize));
+        }
+
+
+        public ActionResult SchoolApplication(int? id)
+        {
+            Schools schools = db.Schools.Find(id);
+            if (Path.GetExtension(schools.Sc_App) == ".pdf")
+            {
+                string fullpath = Path.Combine(Server.MapPath("~/UploadsPdf"), schools.Sc_App);
+                return File(fullpath, "UploadsPdf/pdf");
+            }
+            else
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.Forbidden);
         }
 
 

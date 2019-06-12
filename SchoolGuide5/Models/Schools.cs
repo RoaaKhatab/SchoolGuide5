@@ -59,7 +59,24 @@ namespace SchoolGuide5.Models
 
         public int? Sc_phone3 { get; set; }
 
+        [DisplayName("School Application")]
+        public String Sc_App { get; set; }
+
         public List<Comment> Comments { get; set; }
+
+        //[NotMapped]
+        //public decimal OverallRating
+        //{
+        //    get
+        //    {
+        //        if (Ratings.Count > 0)
+        //        {
+        //            return (Ratings.Average(x=>x.Rate))
+        //        }
+        //        return (0);
+        //    }
+
+        //}
 
         //public ICollection<ApplicationUser> Wishers { get; set; }
 

@@ -56,13 +56,15 @@ namespace SchoolGuide4.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddSchool(Schools School, HttpPostedFileBase Upload)
+        public ActionResult AddSchool(Schools School, HttpPostedFileBase Upload,HttpPostedFileBase UploadPdf)
         {
 
+            //save pdf
+            string PdfPath = Path.Combine(Server.MapPath("~/UploadsPdf"), UploadPdf.FileName);
+            UploadPdf.SaveAs(PdfPath);
+            School.Sc_App = UploadPdf.FileName;
 
-            //string path = Path.Combine(Server.MapPath("~/Uploads"), upload.FileName);
-            //upload.SaveAs(path);
-            // School.Sc_Image = upload.FileName;
+            //save image
             string path = Path.Combine(Server.MapPath("~/Uploads"), Upload.FileName);
             Upload.SaveAs(path);
             db.Schools.Add(School);

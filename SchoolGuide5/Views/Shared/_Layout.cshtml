@@ -275,53 +275,39 @@
     <script src="https://kit.fontawesome.com/9372a48588.js"></script>
 
     <!-------------SchoolDetails---------------->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    @*<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <!------ SchoolDetails ---------->
-
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>*@
+    
     <!-- Custom js -->
     <script src="~/content/js/custom.js"></script>
 
     <!-- Script for the rating Star-->
 
     <script>
-        $(function () {
-
-            var rating = 1.6;
+    var rating = 1.6;
 
 
-            $("#RateStars").rateYo({
-                rating: rating,
-                numStars: 5,
-                precision: 2,
-                starWidth: "24px",
-                spacing: "5px",
-                multiColor: {
-                    startColor: "#000000",
-                    endColor: "#ffffff"
-                },
-                onInit: function () {
+        $("#RateStars").rateYo({
+            rating: rating,
+            numStars: 5,
+            precision: 2,
+            starWidth: "24px",
+            spacing: "5px",
+            multiColor: {
+                startColor: "#000000",
+                endColor: "#ffffff"
+            },
+            onInit: function () {
 
-                    console.log("On Init");
-                },
-                onSet: function (e, data) {
-                    $("#RateStarsValue").val($(this).rateYo("rating"));
-                });
-
-            $("#readonly-widg").rateYo({
-
-                rating: rating,
-                numStars: 5,
-                precision: 2,
-                minValue: 1,
-                maxValue: 5
-            }).on("rateyo.change", function (e, data) {
-
-                console.log(data.rating);
-            });
-
+                console.log("On Init");
+            },
+            onSet: function (e, data) {
+                $("#RateStarsValue").val($(this).rateYo("rating"));
+                $(this).rateYo("option", "readOnly", true);
+            }.on("rateyo.set", function () { console.log("rateyo.set"); })
+                .on("rateyo.change", function () { console.log("rateyo.change"); })
         })
     </script>
 
