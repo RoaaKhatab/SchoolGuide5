@@ -20,6 +20,11 @@ width: 350px ;">
                     <ul>
                         @Html.ActionLink("Download Application", "SchoolApplication", "Schools", new { id = Model.School.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } })
                     </ul>
+                    <ul>
+                        @Html.ActionLink("Add Comment", "AddComment", new { id = Model.School.Sc_id })
+
+                    </ul>
+                   
 
 
                 </div>
@@ -76,8 +81,7 @@ width: 350px ;">
                         <p>There are no comments on this school. </p>
                     }
 
-                    @*@(Html.Partial("_CommentForm", new SchoolGuide5.Models.Comment(),new ViewDataDictionary(ViewData) { { "Sc_id",Model.School.Sc_id } }))*@
-                    @Html.ActionLink("Add Comment", "AddComment", new { id = Model.School.Sc_id })
+                   
 
                 </div>
             </div>

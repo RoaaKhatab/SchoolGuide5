@@ -23,42 +23,15 @@
         <th>
             Name
         </th>
-        <th>
-            Details
-        </th>
-        <th>
-
-        </th>
-        <th>
-            Twitter
-        </th>
-        <th>
-            Instagram
-        </th>
-        <th>
-            Image
-        </th>
+  
         <th>
             Category
         </th>
-        <th>
-            Fees From
-        </th>
-        <th>
-            Fees To
-        </th>
+       
         <th>
             Location
         </th>
-        <th>
-            Phone
-        </th>
-        <th>
-            Phone
-        </th>
-        <th>
-            Phone
-        </th>
+      
         <th></th>
     </tr>
 
@@ -68,41 +41,17 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Sc_Name)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_Details)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_Facebook)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_Twitter)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_instagram)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_Image)
-            </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.Sc_Category)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_Fees_From)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_Fees_To)
-            </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.Sc_Location)
             </td>
+           
             <td>
-                @Html.DisplayFor(modelItem => item.Sc_phone1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_phone2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sc_phone3)
+                @Html.ActionLink("Details", "Details", new { id = item.Sc_id })|
             </td>
             
         </tr>

@@ -32,11 +32,12 @@
                         {
                             <tr id="row-@item.Whish_id">
                                 <td>
-                                    @item.School.Sc_Name
+                                    @*@item.School.Sc_Name*@
+                                    @Html.ActionLink(item.School.Sc_Name,"Details","Schools",new { id = item.School.Sc_id },new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon","gear"} })
                                 </td>
 
                                 <td>
-                                    @Html.ActionLink("Remove From Whishlist", "RemoveFromWhishlist", "Parent", new { id = item.Whish_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } }) 
+                                    @Html.ActionLink("Remove From Whishlist", "RemoveFromWhishlist", "Parent", new { id = item.Whish_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } })
 
                                 </td>
                             </tr>

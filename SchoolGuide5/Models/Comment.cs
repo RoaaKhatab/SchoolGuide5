@@ -16,6 +16,7 @@ namespace SchoolGuide5.Models
         public string UserId { get; set; }
         public int? School_id { get; set; }
         public string Username { get; set; }
+        [Range(0,5)]
         public double Rating { get; set; }
 
         
