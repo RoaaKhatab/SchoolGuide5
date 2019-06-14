@@ -15,17 +15,33 @@
                 <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
                     <img alt="School Pic" src="~/Uploads/@Html.DisplayFor(model=>model.School.Sc_Image)" id="profile-image1" style="height:250px ;
 width: 350px ;">
-                    <ul>
-                        @Html.ActionLink("Add To Wishlist", "AddToWhishlist", "Parent", new { id = Model.School.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } })
-                    </ul>
-                    <ul>
-                        @Html.ActionLink("Download Application", "SchoolApplication", "Schools", new { id = Model.School.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } })
-                    </ul>
-                    <ul>
-                        @Html.ActionLink("Add Comment", "AddComment", new { id = Model.School.Sc_id })
 
-                    </ul>
-                   
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("Parents"))
+                        {
+                            <ul>
+                                @Html.ActionLink("Add To Wishlist", "AddToWhishlist", "Parent", new { id = Model.School.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } })
+                            </ul>
+                            <ul>
+                                @Html.ActionLink("Download Application", "SchoolApplication", "Schools", new { id = Model.School.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } })
+                            </ul>
+                            <ul>
+                                @Html.ActionLink("Add Comment", "AddComment", new { id = Model.School.Sc_id })
+
+                            </ul>
+
+                        }
+                        
+                    }else
+                        {
+                            <p>Please you must Register or Login first to Download Application, Add The School To your Whishlist or Add your review  </p>
+                            <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                            <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                        }
+
+
+
 
 
                 </div>
