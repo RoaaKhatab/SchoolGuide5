@@ -22,7 +22,7 @@ namespace SchoolGuide4.Controllers
 
         
        
-            
+            [Authorize(Roles ="Parents")]
 
         public ActionResult Whishlist()
         {
@@ -33,11 +33,7 @@ namespace SchoolGuide4.Controllers
             return View(whishlist);
         }
 
-        //public List<Whishlist> GetWhishlist()
-        //{
-        //    var currentuser = User.Identity.GetUserId();
-        //    return db.Whishlist.Where(x => x.User_id == currentuser).ToList();
-        //}
+        [Authorize(Roles = "Parents")]
 
         public ActionResult AddToWhishlist(Whishlist whishlist,int? id)
         {
@@ -46,10 +42,14 @@ namespace SchoolGuide4.Controllers
             db.Whishlist.Add(whishlist);
             db.SaveChanges();
             return RedirectToAction("Whishlist");
-
-        
-            
+                  
         }
+
+
+
+
+        [Authorize(Roles = "Parents")]
+
         public ActionResult RemoveFromWhishlist(int?id)
         {
             var school = db.Whishlist.Find(id);
@@ -61,6 +61,16 @@ namespace SchoolGuide4.Controllers
 
 
         }
+
+
+
+
+
+
+
+
+
+
 
         //POST: Schools/Delete/5
         //[HttpPost, ActionName("Delete")]

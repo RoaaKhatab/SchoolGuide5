@@ -152,7 +152,9 @@ namespace SchoolGuide5.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, PhoneNumber = model.PhoneNumber, FirstName = model.FirstName, LastName = model.LastName, Age = model.Age, Address = model.Adress, SSN = model.SSN };
+                var user = new ApplicationUser {
+                    UserName = model.UserName, Email = model.Email, PhoneNumber = model.PhoneNumber,
+                    FirstName = model.FirstName, LastName = model.LastName, Age = model.Age, Address = model.Adress, SSN = model.SSN };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

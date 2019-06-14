@@ -40,7 +40,7 @@ namespace SchoolGuide4.Controllers
         }
 
         
-
+        [Authorize(Roles ="Admins")]
         public ActionResult DeleteSchool(int id)
         {
             var School = db.Schools.Where(u => u.Sc_id.Equals(id)).SingleOrDefault();
@@ -49,7 +49,7 @@ namespace SchoolGuide4.Controllers
             return RedirectToAction("Index","Schools");
         }
 
-
+        [Authorize(Roles = "Admins")]
         public ActionResult AddSchool()
         {
             return View();
@@ -73,7 +73,7 @@ namespace SchoolGuide4.Controllers
             return RedirectToAction("Index", "Schools");
         }
 
-
+        [Authorize(Roles = "Admins")]
         public ActionResult EditSchool(int id)
         {
             return View(db.Schools.Where(c => c.Sc_id.Equals(id)).SingleOrDefault());
@@ -97,6 +97,7 @@ namespace SchoolGuide4.Controllers
 
         }
 
+        [Authorize(Roles = "Admins")]
         public ActionResult DeleteFAQ(int id)
         {
             var faqq = db.FAQs.Where(u => u.FAQ_ID.Equals(id)).SingleOrDefault();
@@ -105,6 +106,9 @@ namespace SchoolGuide4.Controllers
             return RedirectToAction("ViewFAQ");
         }
 
+
+
+        [Authorize(Roles = "Admins")]
         public ActionResult AddFAQ()
         {
             return View();
@@ -120,6 +124,8 @@ namespace SchoolGuide4.Controllers
         }
 
 
+
+        [Authorize(Roles = "Admins")]
         public ActionResult EditFAQ(int id)
         {
             return View(db.FAQs.Where(c => c.FAQ_ID.Equals(id)).SingleOrDefault());

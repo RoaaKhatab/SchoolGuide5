@@ -101,6 +101,8 @@ namespace SchoolGuide5.Controllers
         }
 
 
+
+        
         public ActionResult SchoolApplication(int? id)
         {
             Schools schools = db.Schools.Find(id);
@@ -112,6 +114,10 @@ namespace SchoolGuide5.Controllers
             else
                 return new HttpStatusCodeResult(System.Net.HttpStatusCode.Forbidden);
         }
+
+
+
+
 
 
 
@@ -136,7 +142,7 @@ namespace SchoolGuide5.Controllers
         }
 
 
-
+        [Authorize(Roles ="Parents")]
         public ActionResult AddComment()
         {
             return View();
@@ -155,6 +161,8 @@ namespace SchoolGuide5.Controllers
             db.SaveChanges();
             return RedirectToAction("Details",new { id = comment.School_id });
         }
+
+
 
 
 

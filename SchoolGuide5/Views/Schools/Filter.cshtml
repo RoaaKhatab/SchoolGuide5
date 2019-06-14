@@ -132,39 +132,47 @@
         </tr>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Sc_Name)
-                </td>
-                
-                <td>
-                    @Html.DisplayFor(modelItem => item.Sc_Category)
-                </td>
-                
-                <td>
-                    @Html.DisplayFor(modelItem => item.Sc_Location)
-                </td>
-                
-                @if (User.Identity.IsAuthenticated)
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sc_Name)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Sc_Category)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Sc_Location)
+            </td>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("Admins"))
                 {
-                    if (User.IsInRole("Admins"))
-                    {
-                        <td>
-                            @Html.ActionLink("Edit", "EditSchool", "Admin", new { id = item.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.Sc_id }) |
-                            @Html.ActionLink("Delete", "DeleteSchool", "Admin", new { id = item.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } })
-                        </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditSchool", "Admin", new { id = item.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Sc_id }) |
+                        @Html.ActionLink("Delete", "DeleteSchool", "Admin", new { id = item.Sc_id }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } })
+                    </td>
 
-                    }
-                    else
-                    {
-                        <td>
-                            @Html.ActionLink("Details", "Details", new { id = item.Sc_id })
-                        </td>
-
-                    }
                 }
-            </tr>
+                else
+                {
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.Sc_id })
+                    </td>
+
+                }
+
+            }
+            else
+            {
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.Sc_id })
+                </td>
+            }
+
+        </tr>
         }
     </table>
 
