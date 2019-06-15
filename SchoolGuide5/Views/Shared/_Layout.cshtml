@@ -101,7 +101,7 @@
                     </button>
                     <!-- LOGO -->
                     <!-- TEXT BASED LOGO -->
-                    <a class="navbar-brand" href=@Url.Action("Index", "Home")><i class="fa fa-university lg" style="padding-right: 5px ;"></i><span>SCHOOLS GUIDE</span></a>
+                    <a class="navbar-brand" href=@Url.Action("Index", "Home")><i class="fa fa-university lg" style="padding-right: 5px ; color:#59a1d7"></i><span>SCHOOLS GUIDE</span></a>
                     <!-- IMG BASED LOGO  -->
                     <!-- <a class="navbar-brand" href="index.html"><img src="~/content/img/logo.png" alt="logo"></a> -->
                 </div>
@@ -193,12 +193,10 @@
                             <div class="mu-footer-widget">
                                 <h4>Information</h4>
                                 <ul>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="">Features</a></li>
-                                    <li><a href="">Schools</a></li>
-                                    <li><a href="">Event</a></li>
-                                    <li><a href="">Sitemap</a></li>
-                                    <li><a href="">Term Of Use</a></li>
+                                    <li><a href="@Url.Action("About","Home")">About Us</a></li>
+                                    @*<li><a href="">Features</a></li>*@
+                                    <li><a href="@Url.Action("searchpaging","Schools")">Schools</a></li>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -206,11 +204,11 @@
                             <div class="mu-footer-widget">
                                 <h4>Parents Help</h4>
                                 <ul>
-                                    <li><a href="">Get Started</a></li>
-                                    <li><a href="#">My Questions</a></li>
-                                    <li><a href="">Download Files</a></li>
+                                    <li><a href="@Url.Action("UserHelp","Home")">Get Started</a></li>
+                                    <li><a href="@Url.Action("FAQ","Home")">My Questions</a></li>
+                                    @*<li><a href="">Download Files</a></li>
                                     <li><a href="">New Schools</a></li>
-                                    <li><a href="">Academic News</a></li>
+                                    <li><a href="">Academic News</a></li>*@
                                 </ul>
                             </div>
                         </div>

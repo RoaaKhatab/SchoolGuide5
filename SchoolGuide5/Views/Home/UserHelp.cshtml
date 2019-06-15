@@ -1,8 +1,241 @@
-﻿
-@{
-    ViewBag.Title = "UserHelp";
+﻿@{
+    /**/
+
+    ViewBag.Title = "FAQ";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>UserHelp</h2>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+
+    <section id="mu-features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="mu-features-area">
+                        <!-- Start Title -->
+                        <!-- End Title -->
+                        <!-- Start features content -->
+                        <div class="mu-features-content">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4  col-sm-6" style="padding-left:-50px">
+                                    <div class="mu-single-feature">
+                                        <span class="fa fa-leanpub"></span>
+                                        <h4>About schools' details</h4>
+
+                                        <br />
+
+                                        <button id="myBtn1" class="btn btn-default">How to search for specific school?</button>
+
+                                        <div id="myModal1" class="modal">
+
+                                            <div class="modal-content">
+                                                <span class="close">&times;</span>
+                                                <p>Some text in the Modal..</p>
+                                            </div>
+
+                                        </div>
+                                        <br /><br />
+
+
+
+
+                                        <br />
+
+                                        <button id="myBtn3" class="btn btn-default">How to filter schools?</button>
+                                        <div id="myModel3" class="modal">
+                                            <div class="modal-content">
+                                                <span class="close">&times;</span>
+                                                <p>Some text in the Modal..</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mu-single-feature">
+                                        <span class="fa fa-file-text"></span>
+                                        <h4>About the team</h4>
+
+                                        <br />
+
+                                        <button id="myBtn4" class="btn btn-default">How to send a feedback?</button>
+                                        <div id="myModel4" class="modal">
+                                            <div class="modal-content">
+                                                <span class="close">&times;</span>
+                                                <p>Some text in the Modal..</p>
+                                            </div>
+                                        </div>
+                                        <br /><br />
+                                        <br />
+
+                                        <button id="myBtn5" class="btn btn-default">Know more about us!</button>
+                                        <div id="myModel5" class="modal">
+                                            <div class="modal-content">
+                                                <span class="close">&times;</span>
+                                                <p>Some text in the Modal..</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mu-single-feature">
+                                        <span class="fa fa-bookmark-o"></span>
+                                        <h4>Wishlist</h4>
+                                        <br />
+
+                                        <button id="myBtn6" class="btn btn-default">What is the wish list?</button>
+                                        <div id="myModel6" class="modal">
+                                            <div class="modal-content">
+                                                <span class="close">&times;</span>
+                                                <p>Some text in the Modal..</p>
+                                            </div>
+                                        </div>
+                                        <br /><br />
+                                        <br />
+                                        <button id="myBtn7" class="btn btn-default">How to add a school to your wish list?</button>
+                                        <div id="myModel7" class="modal">
+                                            <div class="modal-content">
+                                                <span class="close">&times;</span>
+                                                <p>Some text in the Modal..</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- End features content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+    </style>
+</body>
+</html>
+
+<script>
+    // Get the modal
+    var modal1 = document.getElementById("myModal1");
+    //var modal2 = document.getElementById("myModal2");
+    //var modal = document.getElementById("myModal3");
+    //var modal = document.getElementById("myModal4");
+    //var modal = document.getElementById("myModal5");
+    //var modal = document.getElementById("myModal6");
+    //var modal = document.getElementById("myModal7");
+
+    // Get the button that opens the modal
+    var btn1 = document.getElementById("myBtn1");
+    var btn2 = document.getElementById("myBtn2");
+    var btn3 = document.getElementById("myBtn3");
+    var btn4 = document.getElementById("myBtn4");
+    var btn5 = document.getElementById("myBtn5");
+    var btn6 = document.getElementById("myBtn6");
+    var btn7 = document.getElementById("myBtn7");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn1.onclick = function () {
+        modal1.style.display = "block";
+    }
+
+    btn2.onclick = function () {
+        modal1.style.display = "block";
+    }
+
+    btn3.onclick = function () {
+        modal1.style.display = "block";
+    }
+
+    btn4.onclick = function () {
+        modal1.style.display = "block";
+    }
+
+    btn5.onclick = function () {
+        modal1.style.display = "block";
+    }
+
+    btn6.onclick = function () {
+        modal1.style.display = "block";
+    }
+
+    btn7.onclick = function () {
+        modal1.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal1.style.display = "none";
+    }
+
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal1) {
+            modal1.style.display = "none";
+        }
+    }
+
+</script>
+
 

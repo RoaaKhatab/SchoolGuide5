@@ -34,6 +34,10 @@ namespace SchoolGuide5.Controllers
         {
             return View();
         }
+        public ActionResult UserHelp()
+        {
+            return View();
+        }
 
     }
 }

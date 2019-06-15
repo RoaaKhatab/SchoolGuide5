@@ -8,7 +8,7 @@
 <!-- Start Title -->
 
 <div>
-    <h1 style="font-family:sans-serif; font-size:60px; margin-left:400px;">School guide help center!</h1>
+    <h1 style="font-family:sans-serif; font-size:60px; margin-left:400px;color:#59a1d7">School guide help center!</h1>
 </div>
 
 
@@ -16,11 +16,11 @@
 @foreach (var item in Model)
 {
 
-    <h2 style="margin-left:50px; font:bold; color:darkblue">
+    <h2 style="margin-left:50px; font-size:25px; font:bold; color:cadetblue">
         @Html.DisplayFor(modelItem => item.Question)
     </h2>
 
-    <h3 style="margin-left:60px; color:cornflowerblue">
+    <h3 style="margin-left:60px; font-size:18px; color:#808080">
         @Html.DisplayFor(modelItem => item.Answer)
     </h3>
 
@@ -29,13 +29,13 @@
         if (User.IsInRole("Admins"))
         {
             <p style="margin-bottom:50px; margin-left:70px; ">
-                <u style="margin-left:70px;">
+                <button class="btn btn-default"  style="margin-left:70px;">
                     @Html.ActionLink("Edit", "EditFAQ", new { id = item.FAQ_ID })
-                </u>
+                </button>
 
-                <u style="margin-left:50px">
+                <button class="btn btn-default" style="margin-left:50px">
                     @Html.ActionLink("Delete", "DeleteFAQ", new { id = item.FAQ_ID })
-                </u>
+                </button>
             </p>
             <hr />
 

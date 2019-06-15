@@ -22,7 +22,7 @@ namespace SchoolGuide4.Controllers
 
         
        
-            [Authorize(Roles ="Parents")]
+           
 
         public ActionResult Whishlist()
         {
@@ -33,7 +33,7 @@ namespace SchoolGuide4.Controllers
             return View(whishlist);
         }
 
-        [Authorize(Roles = "Parents")]
+       
 
         public ActionResult AddToWhishlist(Whishlist whishlist,int? id)
         {
@@ -48,7 +48,7 @@ namespace SchoolGuide4.Controllers
 
 
 
-        [Authorize(Roles = "Parents")]
+       
 
         public ActionResult RemoveFromWhishlist(int?id)
         {

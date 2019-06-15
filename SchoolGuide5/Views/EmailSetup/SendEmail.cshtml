@@ -3,62 +3,68 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 @model SchoolGuide5.Models.gmail
-
 @*@{
         Layout = null;
     }*@
 
-<!DOCTYPE html>
+<section id="mu-testimonial" style=" background-image: url('../../Content/img/mine/feedback.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-testimonial-area">
+                    <div id="mu-testimonial-slide" class="mu-testimonial-content">
+                        <!-- start testimonial single item -->
+                        <div class="mu-testimonial-item">
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-wi
-          dth" />
-    <title>SendEmail</title>
-</head>
-<body style="background-color:ghostwhite">
-    <div style="margin-left:600px">
-
-        @using (Html.BeginForm("SendEmail", "EmailSetup", FormMethod.Post, new { enctype = "multipart/form-data" }))
-        {
-
-
-            <table>
+                            <!DOCTYPE html>
+                            <html>
+                            <head>
+                                <meta name="viewport" content="width=device-width" />
+                                <title>SendEmail</title>
+                            </head>
+                            <body style="background-image: url('../../Content/img/mine/feedback.jpg')">
+                                <div style="margin-left:100px">
+                                    @using (Html.BeginForm("SendEmail", "EmailSetup", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    {
 
 
+                                        <table>
 
 
-                <tr>
-                    <td><h2 style="text-align:left; margin-top:100px; font-family:Bradley Hand ITC; font-size:80px"> FEEDBACK </h2></td>
-                </tr>
+                                            <tr>
+                                                <td><h2 style="text-align:left; margin-top:50px; font-family:Bradley Hand ITC; font-size:80px"> FEEDBACK </h2></td>
+                                            </tr>
+                                            <tr>
+                                                <td><h2 style="text-align:left;  margin-top:10px; margin-bottom:30px; font-size:18px; font-family:Bell MT"> Write down your problem, suggestion or whatever you want to tell us.</h2></td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Html.TextAreaFor(model => model.Body, new { rows = "7", cols = "60" })</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="submit" value="Send" class="btn btn-default" style="width:150px; margin-left:200px; margin-top:20px; margin-bottom:50px" />
+                                                </td>
+                                            </tr>
+                                        </table>
 
-                <tr>
-                    <td><h2 style="text-align:left;  margin-top:10px; margin-bottom:30px; font-size:18px; font-family:Bell MT"> Write down your problem, suggestion or whatever you want to tell us.</h2></td>
-                </tr>
+                                        <br />
+                                        <span style="color:green">@ViewBag.Message</span>
+                                    }
+                                </div>
 
-                <tr>
-                    <td>@Html.TextAreaFor(model => model.Body, new { rows = "7", cols = "60" })</td>
-                </tr>
 
-                <tr>
-                    <td>
-                        <input type="submit" value="Send" class="btn btn-default" style="width:150px; margin-left:200px; margin-top:20px; margin-bottom:50px" />
-                    </td>
-                </tr>
+                            </body>
+                        </html>
 
-            </table>
+                    </div>
 
-            <br />
-            <span style="color:green">@ViewBag.Message</span>
-        }
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+</section>
 
-
-
-
-</body>
-</html>
 
 
