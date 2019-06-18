@@ -26,15 +26,14 @@
                                         <span class="glyphicon glyphicon-user img-size" style="padding: 20px; font-size: 30px ;"></span>
                                     </p>
                                 </div>
-                                @if (User.IsInRole("Parents"))
-                                {
+                                
                                     <div class="col-lg-8" style="padding:10px ;">
 
                                         <div style="padding-bottom:10px ;"><a href="@Url.Action("Whishlist","Parent")">My Wishlist</a></div>
                                         <div><a href="@Url.Action("EditProfile","Account")">Edit Profile</a></div>
                                     </div>
 
-                                }
+                                
 
 
 

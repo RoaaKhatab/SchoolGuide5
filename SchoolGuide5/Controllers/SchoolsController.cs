@@ -142,7 +142,6 @@ namespace SchoolGuide5.Controllers
         }
 
 
-        [Authorize(Roles ="Parents")]
         public ActionResult AddComment()
         {
             return View();
